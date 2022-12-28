@@ -11,7 +11,7 @@ public class PlayerMovement : MonoBehaviour
 
     private float horizontal;
     private float speed = 8f;
-    private float jumpingPower = 16f;
+    private float jumpingPower = 12f;
     private bool isFacingRight = true;
 
     void Update()
@@ -31,7 +31,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Jump(InputAction.CallbackContext context)
     {
-        Debug.Log("jumpcalled");
         if (context.performed && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
@@ -45,7 +44,7 @@ public class PlayerMovement : MonoBehaviour
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
 
     private void Flip()
@@ -58,7 +57,6 @@ public class PlayerMovement : MonoBehaviour
 
     public void Move(InputAction.CallbackContext context)
     {
-        Debug.Log("move called");
         horizontal = context.ReadValue<Vector2>().x;
     }
 }
