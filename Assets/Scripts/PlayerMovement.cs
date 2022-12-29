@@ -115,10 +115,10 @@ public class PlayerMovement : MonoBehaviour
     //     transform.localScale = localScale;
     // }
 
-    // public void Move(InputAction.CallbackContext context)
-    // {
-    //     horizontal = context.ReadValue<Vector2>().x;
-    // }
+    //public void Move(InputAction.CallbackContext context)
+    //{
+    //    horizontal = context.ReadValue<Vector2>().x;
+    //}
 
     private int getKeyInt(KeyCode key) {
         return Input.GetKey(key) ? 1 : 0; 

@@ -23,7 +23,7 @@ public class Laser : MonoBehaviour
     private void Update()
     {
         ShootLaser();
-        ammoText.text = "  X " + ammo;
+        ammoText.text = ammo.ToString();
     }
 
     void ShootLaser()

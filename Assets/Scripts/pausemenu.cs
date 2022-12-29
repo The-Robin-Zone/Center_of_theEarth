@@ -6,23 +6,18 @@ using UnityEngine.SceneManagement;
 public class pausemenu : MonoBehaviour
 {
     [SerializeField] GameObject pauseMenu;
+    public GameObject pausebutton;
     public GameObject resumebutton;
     public GameObject scope;
 
     private void Update()
     {
-        if (Input.GetKeyDown("p") && Time.timeScale == 1)
-        {
-            Pause();
-        }
-        else if(Input.GetKeyDown("p") && Time.timeScale == 0)
-        {
-            Resume();
-        }
+
     }
 
     public void Pause()
     {
+        pausebutton.SetActive(false);
         scope.SetActive(false);
         pauseMenu.SetActive(true);
         Time.timeScale = 0;
@@ -38,6 +33,7 @@ public class pausemenu : MonoBehaviour
 
     public void Resume()
     {
+        pausebutton.SetActive(true);
         scope.SetActive(true);
         pauseMenu.SetActive(false);
         Time.timeScale = 1;
