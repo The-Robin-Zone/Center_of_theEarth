@@ -4,13 +4,7 @@
 TagManager:
   serializedVersion: 2
   tags:
-<<<<<<< HEAD
-  - LaserGun
-  - Grass
-=======
-  - Enemy
   - Ground
->>>>>>> 2bbb7cb8e1f9e59cb3d61015562cc2a34213dc8d
   layers:
   - Default
   - TransparentFX
@@ -47,13 +41,4 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
-    locked: 0
-  - name: Background
-    uniqueID: 2018118241
-    locked: 0
-  - name: Player
-    uniqueID: 177600413
-    locked: 0
-  - name: player front
-    uniqueID: 1858714615
     locked: 0
