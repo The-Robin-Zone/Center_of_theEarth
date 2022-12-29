@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 1746047901839207023}
   - component: {fileID: 721190524129970077}
   - component: {fileID: -1920700694466610002}
+  - component: {fileID: -4015520971691831159}
   m_Layer: 6
   m_Name: Grass
   m_TagString: Ground
@@ -72,7 +73,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 177600413
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 69273276e1c8ccb49b6732c3e9722868, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -111,3 +112,15 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 5.1, y: 5.1}
   m_EdgeRadius: 0
+--- !u!114 &-4015520971691831159
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4268429578031985603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e18a694b220244a31847426d15ba4fa3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

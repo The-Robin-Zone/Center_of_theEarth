@@ -31,13 +31,13 @@ public class GunAim : MonoBehaviour
         {
             Shoot();
         }
+
     }
 
     public void Shoot()
     {
 
         Debug.Log("enter shot function");
-
         if (laserGun.activeSelf == false)
         {
             Debug.Log("shoots fired");
