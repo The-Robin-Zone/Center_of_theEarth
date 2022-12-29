@@ -4,8 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+<<<<<<< HEAD
   - LaserGun
   - Grass
+=======
+  - Enemy
+  - Ground
+>>>>>>> 2bbb7cb8e1f9e59cb3d61015562cc2a34213dc8d
   layers:
   - Default
   - TransparentFX
