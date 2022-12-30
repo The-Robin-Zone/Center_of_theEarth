@@ -23,7 +23,7 @@ public class pausemenu : MonoBehaviour
         Time.timeScale = 0;
     }
 
-    //In case youre dead we need this option
+    //In case youre dead we need this option, Currently not in use
     public void PauseNoResume()
     {
         resumebutton.SetActive(false);
@@ -42,7 +42,7 @@ public class pausemenu : MonoBehaviour
     public void Restart()
     {
         Time.timeScale = 1;
-        SceneManager.LoadScene("Level1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void Exit()

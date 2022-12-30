@@ -50,7 +50,7 @@ public class Laser : MonoBehaviour
         if (hit.collider != null)
         {
             Debug.DrawRay(transform.position, hit.point, Color.white);
-            if (hit.transform.gameObject.tag != "Player")
+            if (hit.transform.gameObject.tag == "Ground")
             {
                 hit.transform.gameObject.SetActive(false);
                 ammo++;
