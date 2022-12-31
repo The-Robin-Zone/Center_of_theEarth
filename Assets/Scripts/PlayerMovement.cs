@@ -62,11 +62,12 @@ public class PlayerMovement : MonoBehaviour
         _rb.velocity = new Vector2(hinput * moveSpeed, _rb.velocity.y);
 
     
-
+        
         if (hinput != 0) {
             updateHeading();
         }
 
+        // Jumping
         if (jinput && IsGrounded()) {
             _rb.velocity = new Vector2(_rb.velocity.x, jumpingPower);
         }
