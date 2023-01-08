@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,24 +7,25 @@ using TMPro;
 public class Laser : MonoBehaviour
 {
     [SerializeField] private float defDistanceRay = 100;
+    [SerializeField] float distance = 500f;
+    Transform m_transform;
+    RaycastHit2D hit;
+    //public int ammo = 0;
+    public TextMeshProUGUI ammoAmount;
     public Transform laserFirePoint;
     public LineRenderer m_lineRenderer;
-    Transform m_transform;
 
-    [SerializeField] float distance = 500f;
-    RaycastHit2D hit;
-    private int ammo = 0;
-    public TextMeshProUGUI ammoText;
 
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
     }
 
-    private void Update()
+
+    private void FixedUpdate()
     {
         ShootLaser();
-        ammoText.text = ammo.ToString();
+        //ammoAmount.text = ammo.ToString();
     }
 
     void ShootLaser()
@@ -46,14 +48,15 @@ public class Laser : MonoBehaviour
 
         hit = Physics2D.Raycast(transform.position, transform.right, distance);
 
-        //If Ray hit something, than disable it
+        //If Ray hits a ground tile, disable it
         if (hit.collider != null)
         {
             Debug.DrawRay(transform.position, hit.point, Color.white);
             if (hit.transform.gameObject.tag == "Ground")
             {
                 hit.transform.gameObject.SetActive(false);
-                ammo++;
+                ammoAmount.text = (Int32.Parse(ammoAmount.text)+1).ToString();
+                //ammo++;
             }
            
         }
