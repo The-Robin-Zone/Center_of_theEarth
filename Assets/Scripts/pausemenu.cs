@@ -15,6 +15,11 @@ public class pausemenu : MonoBehaviour
 
     }
 
+    public void resetTimeScale()
+    {
+        Time.timeScale = 1;
+    }
+
     public void Pause()
     {
         pausebutton.SetActive(false);
@@ -28,7 +33,7 @@ public class pausemenu : MonoBehaviour
     {
         resumebutton.SetActive(false);
         pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+        resetTimeScale();
     }
 
     public void Resume()
@@ -36,18 +41,24 @@ public class pausemenu : MonoBehaviour
         pausebutton.SetActive(true);
         scope.SetActive(true);
         pauseMenu.SetActive(false);
-        Time.timeScale = 1;
+        resetTimeScale();
     }
 
     public void Restart()
     {
-        Time.timeScale = 1;
+        resetTimeScale();
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
+    
+
     public void Exit()
     {
-        Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        resetTimeScale();
+        SceneManager.LoadScene(0);
+
+
+        //Application.Quit();
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 }

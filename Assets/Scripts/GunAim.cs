@@ -13,13 +13,13 @@ public class GunAim : MonoBehaviour
     private Transform Gun;
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         laserGun.SetActive(false);
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         InnerHand = transform.Find("InnerHand");
         OuterHand = transform.Find("OuterHand");
-        Gun = transform.Find("Gun");
+        Gun = transform.Find("Gun").Find("Sprite");
     }
 
     // Update is called once per frame
@@ -35,9 +35,10 @@ public class GunAim : MonoBehaviour
 
         Quaternion rotQuaternion = Quaternion.Euler(0, 0, rotZ);
         transform.rotation = rotQuaternion;
-        SetHandOrientation(OuterHand, rotQuaternion, yScale);
-        SetHandOrientation(InnerHand, rotQuaternion, yScale);
-        SetHandOrientation(Gun, rotQuaternion, yScale);
+        Transform[] hands = {OuterHand, InnerHand, Gun};
+        foreach (Transform hand in hands) {
+            SetHandOrientation(hand, rotQuaternion, yScale);
+        }
         
         if (Input.GetMouseButtonDown(0)) {
             Shoot();

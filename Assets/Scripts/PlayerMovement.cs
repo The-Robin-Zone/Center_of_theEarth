@@ -15,8 +15,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
-    private float moveSpeed = 8f;
-    private float jumpingPower = 8f;
+    private float moveSpeed = 4.25f;
+    private float jumpingPower = 6f;
     private int heading = 1;
 
     private float hinput;
@@ -103,6 +103,8 @@ public class PlayerMovement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
     }
 
+    
+
     // private bool IsGrounded()
     // {
     //     return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
@@ -125,5 +127,19 @@ public class PlayerMovement : MonoBehaviour
         return Input.GetKey(key) ? 1 : 0; 
     }
 
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        StateManager _manager = FindObjectOfType<StateManager>();
+        if (other.CompareTag("RoomTransition"))
+        {
+            // get the gamemanager and make it restart the game
+            _manager.finishLevel();
+
+        } else if (other.CompareTag("DeathBox")) {
+            _manager.setStateLoss();
+
+        }
+    }
 
 }
