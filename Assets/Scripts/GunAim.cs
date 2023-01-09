@@ -106,11 +106,6 @@ public class GunAim : MonoBehaviour
     {
         // TO FIX
         // AIM isnt accurate
-        // Ammo count is not working properly
-
-        //GameObject som = GameObject.FindGameObjectWithTag("LaserGun");
-
-        //int currAmmo = Int32.Parse(ammoAmount.text);
         
         if (Int32.Parse(ammoAmount.text) > 0)
         {
@@ -122,9 +117,10 @@ public class GunAim : MonoBehaviour
 
             AimVector = AimVector - new Vector2(963,534);
 
-            //Debug.Log("Mouse position is : " + AimVector);
+            Debug.Log("Mouse position is : " + AimVector);
+            Debug.Log("laserGun position is : " + (Vector2)laserGun.transform.position);
 
-            CurrBullet.GetComponent<Rigidbody2D>().AddForce(AimVector);
+            CurrBullet.GetComponent<Rigidbody2D>().AddForce(AimVector - (Vector2)laserGun.transform.position);
         }
 
 

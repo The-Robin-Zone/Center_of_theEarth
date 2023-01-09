@@ -25,20 +25,19 @@ public class Laser : MonoBehaviour
     private void FixedUpdate()
     {
         ShootLaser();
-        //ammoAmount.text = ammo.ToString();
     }
 
     void ShootLaser()
     {
-        if (Physics2D.Raycast(m_transform.position, transform.right))
-        {
-            RaycastHit2D _hit = Physics2D.Raycast(laserFirePoint.position, transform.right);
-            Draw2DRay(laserFirePoint.position, _hit.point);
-        }
-        else
-        {
+        //if (Physics2D.Raycast(m_transform.position, transform.right))
+        //{
+        //    RaycastHit2D _hit = Physics2D.Raycast(laserFirePoint.position, transform.right);
+        //    Draw2DRay(laserFirePoint.position, _hit.point);
+        //}
+        //else
+        //{
             Draw2DRay(laserFirePoint.position, laserFirePoint.transform.right * defDistanceRay);
-        }
+        //}
     }
 
     void Draw2DRay(Vector2 startPos, Vector2 endPos)
@@ -49,16 +48,12 @@ public class Laser : MonoBehaviour
         hit = Physics2D.Raycast(transform.position, transform.right, distance);
 
         //If Ray hits a ground tile, disable it
-        if (hit.collider != null)
+        if (hit.collider != null && hit.transform.gameObject.tag == "Ground")
         {
-            Debug.DrawRay(transform.position, hit.point, Color.white);
-            if (hit.transform.gameObject.tag == "Ground")
-            {
-                hit.transform.gameObject.SetActive(false);
-                ammoAmount.text = (Int32.Parse(ammoAmount.text)+1).ToString();
-                //ammo++;
-            }
-           
+            Debug.Log("in loop");
+            Debug.DrawRay(transform.position, hit.point, Color.white);   
+            hit.transform.gameObject.SetActive(false);
+            ammoAmount.text = (Int32.Parse(ammoAmount.text)+1).ToString();           
         }
     }
 }
