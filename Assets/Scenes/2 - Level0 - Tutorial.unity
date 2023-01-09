@@ -9161,7 +9161,7 @@ PrefabInstance:
     - target: {fileID: 6568404482609312768, guid: b052181c2622342e99f6baafc595bc3e, type: 3}
       propertyPath: bullet
       value: 
-      objectReference: {fileID: 4894038802166516079}
+      objectReference: {fileID: 2578707382079463963, guid: 589cc7bf74848480995559e1ac250100, type: 3}
     - target: {fileID: 6568404482609312768, guid: b052181c2622342e99f6baafc595bc3e, type: 3}
       propertyPath: ShootType
       value: 
@@ -15419,8 +15419,3 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3c16f4836c48b46a6b86d1ebc93b64ab, type: 3}
---- !u!1 &4894038802166516079 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4894038802438597715, guid: 3c16f4836c48b46a6b86d1ebc93b64ab, type: 3}
-  m_PrefabInstance: {fileID: 4894038802166516078}
-  m_PrefabAsset: {fileID: 0}
