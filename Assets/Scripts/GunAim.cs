@@ -27,13 +27,13 @@ public class GunAim : MonoBehaviour
     
 
     // Start is called before the first frame update
-    void Start()
+    void Awake()
     {
         laserGun.SetActive(false);
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         InnerHand = transform.Find("InnerHand");
         OuterHand = transform.Find("OuterHand");
-        Gun = transform.Find("Gun");
+        Gun = transform.Find("Gun").Find("Sprite");
     }
 
     // Update is called once per frame
@@ -49,9 +49,12 @@ public class GunAim : MonoBehaviour
 
         Quaternion rotQuaternion = Quaternion.Euler(0, 0, rotZ);
         transform.rotation = rotQuaternion;
-        SetHandOrientation(OuterHand, rotQuaternion, yScale);
-        SetHandOrientation(InnerHand, rotQuaternion, yScale);
-        SetHandOrientation(Gun, rotQuaternion, yScale);
+
+        Transform[] hands = {OuterHand, InnerHand, Gun};
+        foreach (Transform hand in hands) {
+            SetHandOrientation(hand, rotQuaternion, yScale);
+        }
+         
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -63,7 +66,7 @@ public class GunAim : MonoBehaviour
             {
                 ShootTiles();
             }
-            
+
         }
         if (Input.GetMouseButtonDown(1) && laserGun.activeSelf == false)
         {
@@ -104,9 +107,7 @@ public class GunAim : MonoBehaviour
 
     public void ShootTiles()
     {
-        // TO FIX
-        // AIM isnt accurate
-        
+
         if (Int32.Parse(ammoAmount.text) > 0)
         {
             ammoAmount.text = (Int32.Parse(ammoAmount.text) - 1).ToString();
@@ -115,12 +116,13 @@ public class GunAim : MonoBehaviour
 
             Vector2 AimVector = Input.mousePosition;
 
-            AimVector = AimVector - new Vector2(963,534);
+            AimVector = AimVector - new Vector2(963, 534);
 
             Debug.Log("Mouse position is : " + AimVector);
             Debug.Log("laserGun position is : " + (Vector2)laserGun.transform.position);
 
-            CurrBullet.GetComponent<Rigidbody2D>().AddForce(AimVector - (Vector2)laserGun.transform.position);
+            //CurrBullet.GetComponent<Rigidbody2D>().AddForce(AimVector - (Vector2)laserGun.transform.position);
+            CurrBullet.GetComponent<Rigidbody2D>().AddForce(AimVector);
         }
 
 
