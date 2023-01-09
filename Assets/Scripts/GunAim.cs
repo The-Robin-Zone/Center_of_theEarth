@@ -114,15 +114,18 @@ public class GunAim : MonoBehaviour
 
             GameObject CurrBullet = Instantiate(bullet, transform.position, Quaternion.identity);
 
-            Vector2 AimVector = Input.mousePosition;
+            //Vector2 AimVector = Input.mousePosition;
 
-            AimVector = AimVector - new Vector2(963, 534);
+            Vector2 AimVector = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+            //AimVector = AimVector - new Vector2(963, 534);
 
             Debug.Log("Mouse position is : " + AimVector);
             Debug.Log("laserGun position is : " + (Vector2)laserGun.transform.position);
 
+            Vector2 shotForce = AimVector - (Vector2)laserGun.transform.position;
             //CurrBullet.GetComponent<Rigidbody2D>().AddForce(AimVector - (Vector2)laserGun.transform.position);
-            CurrBullet.GetComponent<Rigidbody2D>().AddForce(AimVector);
+            CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
         }
 
 
