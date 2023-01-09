@@ -8,6 +8,7 @@ TagManager:
   - Ground
   - RoomTransition
   - DeathBox
+  - LaserGun
   layers:
   - Default
   - TransparentFX

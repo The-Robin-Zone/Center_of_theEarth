@@ -1,6 +1,9 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using TMPro;
 
 public class GunAim : MonoBehaviour
 {
@@ -11,6 +14,17 @@ public class GunAim : MonoBehaviour
     private Transform InnerHand;
     private Transform OuterHand;
     private Transform Gun;
+
+    public bool IsBeamActive = true;
+    public TextMeshProUGUI ShootType;
+    public TextMeshProUGUI ammoAmount;
+
+    //for shooting gun
+    public float speed = 10;
+    public Transform target;
+    public GameObject bullet;
+    public Transform bulletPos;
+    
 
     // Start is called before the first frame update
     void Awake()
@@ -35,15 +49,39 @@ public class GunAim : MonoBehaviour
 
         Quaternion rotQuaternion = Quaternion.Euler(0, 0, rotZ);
         transform.rotation = rotQuaternion;
+
         Transform[] hands = {OuterHand, InnerHand, Gun};
         foreach (Transform hand in hands) {
             SetHandOrientation(hand, rotQuaternion, yScale);
         }
-        
-        if (Input.GetMouseButtonDown(0)) {
-            Shoot();
-        }
+         
 
+        if (Input.GetMouseButtonDown(0))
+        {
+            if (ShootType.text == "Beam")
+            {
+                ShootBeam();
+            }
+            if (ShootType.text == "Shoot")
+            {
+                ShootTiles();
+            }
+
+        }
+        if (Input.GetMouseButtonDown(1) && laserGun.activeSelf == false)
+        {
+            IsBeamActive = !IsBeamActive;
+
+            if (IsBeamActive)
+            {
+                ShootType.text = "Beam";
+            }
+            else
+            {
+                ShootType.text = "Shoot";
+            }
+
+        }
     }
 
     private void SetHandOrientation (Transform obj, Quaternion quaternion, int yScale) {
@@ -54,19 +92,44 @@ public class GunAim : MonoBehaviour
         obj.localScale = scale;
     }
 
-    public void Shoot()
+    public void ShootBeam()
     {
-
-        Debug.Log("enter shot function");
         if (laserGun.activeSelf == false)
         {
-            Debug.Log("shoots fired");
             laserGun.SetActive(true);
         }
         else
         {
-            Debug.Log("shoots cancelled");
             laserGun.SetActive(false);
         }
+
+    }
+
+    public void ShootTiles()
+    {
+        // TO FIX
+        // AIM isnt accurate
+        // Ammo count is not working properly
+
+        //GameObject som = GameObject.FindGameObjectWithTag("LaserGun");
+
+        //int currAmmo = Int32.Parse(ammoAmount.text);
+
+        if (Int32.Parse(ammoAmount.text) > 0)
+        {
+            ammoAmount.text = (Int32.Parse(ammoAmount.text) - 1).ToString();
+
+            GameObject CurrBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+
+            Vector2 AimVector = Input.mousePosition;
+
+            AimVector = AimVector - new Vector2(963, 534);
+
+            //Debug.Log("Mouse position is : " + AimVector);
+
+            CurrBullet.GetComponent<Rigidbody2D>().AddForce(AimVector);
+        }
+
+
     }
 }
