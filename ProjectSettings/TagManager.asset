@@ -11,11 +11,12 @@ TagManager:
   - LaserGun
   - LivesText
   - AmmoText
+  - StaticGround
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Ground
   - Water
   - UI
   - 

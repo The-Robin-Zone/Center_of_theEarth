@@ -15,7 +15,7 @@ public class TileLogic : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
 
-        if (col.gameObject.tag == "Ground" && flag == true)
+        if ((col.gameObject.tag == "Ground" || col.gameObject.tag == "StaticGround") && flag == true)
         {
             flag = false;
             Debug.Log("collided with Ground");
