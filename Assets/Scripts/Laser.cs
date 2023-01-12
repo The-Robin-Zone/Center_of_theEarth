@@ -6,22 +6,16 @@ using TMPro;
 
 public class Laser : MonoBehaviour
 {
-    [SerializeField] private float defDistanceRay = 100;
-    [SerializeField] float distance = 500f;
     Transform m_transform;
     RaycastHit2D hit;
-    //public int ammo = 0;
     public TextMeshProUGUI ammoAmount;
     public Transform laserFirePoint;
     public LineRenderer m_lineRenderer;
-
 
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
     }
-
-
     private void FixedUpdate()
     {
         ShootLaser();
@@ -29,31 +23,27 @@ public class Laser : MonoBehaviour
 
     void ShootLaser()
     {
-        //if (Physics2D.Raycast(m_transform.position, transform.right))
-        //{
-        //    RaycastHit2D _hit = Physics2D.Raycast(laserFirePoint.position, transform.right);
-        //    Draw2DRay(laserFirePoint.position, _hit.point);
-        //}
-        //else
-        //{
-            Draw2DRay(laserFirePoint.position, laserFirePoint.transform.right * defDistanceRay);
-        //}
-    }
 
-    void Draw2DRay(Vector2 startPos, Vector2 endPos)
-    {
+        Vector2 startPos = laserFirePoint.position;
+        Vector2 endPos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
+
+        //Change Last Value for beam distance (only beam, not raycast)
+        endPos = (endPos-startPos).normalized * 5f;
+
         m_lineRenderer.SetPosition(0, startPos);
-        m_lineRenderer.SetPosition(1, endPos);
+        m_lineRenderer.SetPosition(1, startPos + endPos);
 
-        hit = Physics2D.Raycast(transform.position, transform.right, distance);
+        //Change Last Value for ray distance (only the raycast, not beam)
+        hit = Physics2D.Raycast(transform.position, transform.right, 5f);
 
         //If Ray hits a ground tile, disable it
         if (hit.collider != null && hit.transform.gameObject.tag == "Ground")
         {
-            Debug.Log("in loop");
-            Debug.DrawRay(transform.position, hit.point, Color.white);   
+            Debug.DrawRay(transform.position, hit.point, Color.white);
             hit.transform.gameObject.SetActive(false);
-            ammoAmount.text = (Int32.Parse(ammoAmount.text)+1).ToString();           
+
+            Global_Variables.ammo++;
+            
         }
     }
 }

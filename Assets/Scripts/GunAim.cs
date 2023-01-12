@@ -24,7 +24,6 @@ public class GunAim : MonoBehaviour
     public Transform target;
     public GameObject bullet;
     public Transform bulletPos;
-    
 
     // Start is called before the first frame update
     void Awake()
@@ -55,7 +54,6 @@ public class GunAim : MonoBehaviour
             SetHandOrientation(hand, rotQuaternion, yScale);
         }
          
-
         if (Input.GetMouseButtonDown(0))
         {
             if (ShootType.text == "Beam")
@@ -66,8 +64,8 @@ public class GunAim : MonoBehaviour
             {
                 ShootTiles();
             }
-
         }
+
         if (Input.GetMouseButtonDown(1) && laserGun.activeSelf == false)
         {
             IsBeamActive = !IsBeamActive;
@@ -80,7 +78,6 @@ public class GunAim : MonoBehaviour
             {
                 ShootType.text = "Shoot";
             }
-
         }
     }
 
@@ -102,32 +99,23 @@ public class GunAim : MonoBehaviour
         {
             laserGun.SetActive(false);
         }
-
     }
 
     public void ShootTiles()
     {
 
-        if (Int32.Parse(ammoAmount.text) > 0)
+        if (Global_Variables.ammo > 0)
         {
-            ammoAmount.text = (Int32.Parse(ammoAmount.text) - 1).ToString();
-
             GameObject CurrBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-
-            //Vector2 AimVector = Input.mousePosition;
 
             Vector2 AimVector = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-            //AimVector = AimVector - new Vector2(963, 534);
-
-            Debug.Log("Mouse position is : " + AimVector);
-            Debug.Log("laserGun position is : " + (Vector2)laserGun.transform.position);
-
             Vector2 shotForce = AimVector - (Vector2)laserGun.transform.position;
-            //CurrBullet.GetComponent<Rigidbody2D>().AddForce(AimVector - (Vector2)laserGun.transform.position);
+
             CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
+
+            Global_Variables.ammo--;
+
         }
-
-
     }
 }

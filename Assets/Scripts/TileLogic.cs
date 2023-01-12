@@ -11,16 +11,6 @@ public class TileLogic : MonoBehaviour
     public float xOffset;
     public float yOffset;
 
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
-
     void OnCollisionEnter2D(Collision2D col)
     {
 
@@ -31,7 +21,8 @@ public class TileLogic : MonoBehaviour
             yOffset = (float)(Math.Round(thisTile.transform.position.y * 2) / 2);
 
             thisTile.transform.position= new Vector3(xOffset, yOffset, 0);
-            Instantiate(regTile, thisTile.transform.position, Quaternion.identity);
+            GameObject newTile = Instantiate(regTile, thisTile.transform.position, Quaternion.identity);
+            newTile.tag = "NewTile";
             Destroy(thisTile);
         }
         

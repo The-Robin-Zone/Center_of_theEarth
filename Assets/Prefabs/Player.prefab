@@ -351,6 +351,7 @@ GameObject:
   - component: {fileID: 6568404481562752057}
   - component: {fileID: 3429802710426504778}
   - component: {fileID: 6587888472888847264}
+  - component: {fileID: -8984975071683750338}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -453,6 +454,22 @@ CapsuleCollider2D:
   m_Offset: {x: -0.014221941, y: 0.06636942}
   m_Size: {x: 0.77495944, y: 0.8672612}
   m_Direction: 0
+--- !u!114 &-8984975071683750338
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6568404481562752051}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3845c5f2de4ad40538975393be78b7a2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammo: 0
+  life: 3
+  ammoAmount: {fileID: 0}
+  lifeAmount: {fileID: 0}
 --- !u!1 &6568404481566245765
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,8 +655,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a63a75783b764199bc0049212b223e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  defDistanceRay: 100
-  distance: 500
   ammoAmount: {fileID: 0}
   laserFirePoint: {fileID: 6568404481566245766}
   m_lineRenderer: {fileID: 6568404482032378771}

@@ -9,6 +9,8 @@ TagManager:
   - RoomTransition
   - DeathBox
   - LaserGun
+  - LivesText
+  - AmmoText
   layers:
   - Default
   - TransparentFX

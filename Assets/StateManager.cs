@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class StateManager : MonoBehaviour
 {
@@ -24,7 +25,6 @@ public class StateManager : MonoBehaviour
     public void Start() {
         DontDestroyOnLoad(gameObject);
     }
-
 
     public void startNextLevel() {
         currentLevel += 1;
