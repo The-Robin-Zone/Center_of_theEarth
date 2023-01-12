@@ -10,6 +10,7 @@ public class PlayerMovement : MonoBehaviour
     public Rigidbody2D _rb;
     public CapsuleCollider2D _bc;
     private Animator _spriteAnimator;
+    private SpriteRenderer _spriteRenderer;
     [SerializeField] private LayerMask groundLayerMask;
 
     public Transform groundCheck;
@@ -55,6 +56,7 @@ public class PlayerMovement : MonoBehaviour
         //_bc = GetComponent<BoxCollider2D>();
         _spriteAnchor = transform.Find("SpriteAnchor");
         _spriteAnimator = _spriteAnchor.Find("Sprite").GetComponent<Animator>();
+        _spriteRenderer = _spriteAnchor.Find("Sprite").GetComponent<SpriteRenderer>();
         initXScale = getXScale();
         initYScale = getYScale();
     }
@@ -143,6 +145,8 @@ public class PlayerMovement : MonoBehaviour
         _spriteAnimator.SetBool("grounded", IsGrounded());
         _spriteAnimator.SetBool("moving", hinput != 0);
 
+        _spriteAnchor
+
         float _xscale = Mathf.Lerp(getXScale(), initXScale * Mathf.Sign(getXScale()), scaleLerpFactor);
         float _yscale = Mathf.Lerp(getYScale(), initYScale, scaleLerpFactor);
         setScale(new Vector3(_xscale, _yscale, getZScale()));
@@ -211,8 +215,7 @@ public class PlayerMovement : MonoBehaviour
 
     private void takeDamage(int damage)
     {
-        StateManager _manager = FindObjectOfType<StateManager>();
-        //_manager.life -= damage;
+        Global_Variables.life -= damage;
     }
 
     private int getKeyInt(KeyCode key) {

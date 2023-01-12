@@ -7,7 +7,7 @@ using TMPro;
 public class Global_Variables : MonoBehaviour
 {
     public static int ammo;
-    public int life = 3;
+    public static int life = 3;
     public TextMeshProUGUI ammoAmount;
     public TextMeshProUGUI lifeAmount;
 

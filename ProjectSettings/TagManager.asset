@@ -11,6 +11,7 @@ TagManager:
   - LaserGun
   - LivesText
   - AmmoText
+  - NewTile
   layers:
   - Default
   - TransparentFX
