@@ -146,5 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17b7c89e2e1954eefb884894baf299d7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  thisTile: {fileID: 2578707382079463963}
+  bulletTile: {fileID: 2578707382079463963}
   regTile: {fileID: 4268429578031985603, guid: d75349cd5712c49f8a64cd957c445db1, type: 3}
+  xOffset: 0
+  yOffset: 0

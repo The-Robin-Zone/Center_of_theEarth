@@ -37,13 +37,13 @@ public class Laser : MonoBehaviour
         hit = Physics2D.Raycast(transform.position, transform.right, 5f);
 
         //If Ray hits a ground tile, disable it
-        if (hit.collider != null && hit.transform.gameObject.tag == "Ground")
+        if (hit.collider != null && (hit.transform.gameObject.tag == "Ground"))
         {
             Debug.DrawRay(transform.position, hit.point, Color.white);
             hit.transform.gameObject.SetActive(false);
 
             Global_Variables.ammo++;
-            
+
         }
     }
 }
