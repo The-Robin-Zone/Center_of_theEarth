@@ -106,11 +106,21 @@ public class GunAim : MonoBehaviour
 
         if (Global_Variables.ammo > 0)
         {
-            GameObject CurrBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-
             Vector2 AimVector = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             Vector2 shotForce = AimVector - (Vector2)laserGun.transform.position;
+
+            GameObject CurrBullet;
+
+            //if aim is directly down enter if
+            if ((AimVector.y < transform.position.y) && (Math.Abs(AimVector.x - transform.position.x) < 1))
+            {
+                CurrBullet = Instantiate(bullet, transform.position - new Vector3(0,1,0), Quaternion.identity);
+            }
+            else
+            {
+                CurrBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+            }
 
             CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
 

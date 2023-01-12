@@ -18,7 +18,6 @@ public class TileLogic : MonoBehaviour
         if (col.gameObject.tag == "Ground" && flag == true)
         {
             flag = false;
-            Debug.Log("collided with Ground");
             xOffset = (float)(Math.Round(bulletTile.transform.position.x * 2) / 2);
             yOffset = (float)(Math.Round(bulletTile.transform.position.y * 2) / 2);
 

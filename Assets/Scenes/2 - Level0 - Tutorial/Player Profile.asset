@@ -10,11 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d7fd9488000d3734a9e00ee676215985, type: 3}
-  m_Name: Main Camera Profile
+  m_Name: Player Profile
   m_EditorClassIdentifier: 
   components:
-  - {fileID: 6933342471143996872}
---- !u!114 &6933342471143996872
+  - {fileID: 5986500989528210219}
+--- !u!114 &5986500989528210219
 MonoBehaviour:
   m_ObjectHideFlags: 3
   m_CorrespondingSourceObject: {fileID: 0}
@@ -26,22 +26,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b2db86121404754db890f4c8dfe81b2, type: 3}
   m_Name: Bloom
   m_EditorClassIdentifier: 
-  active: 0
+  active: 1
   threshold:
-    m_OverrideState: 0
-    m_Value: 0.9
+    m_OverrideState: 1
+    m_Value: 1.3
   intensity:
-    m_OverrideState: 0
-    m_Value: 0
+    m_OverrideState: 1
+    m_Value: 300
   scatter:
     m_OverrideState: 0
-    m_Value: 0.7
+    m_Value: 0.597
   clamp:
     m_OverrideState: 0
-    m_Value: 65472
+    m_Value: 0
   tint:
     m_OverrideState: 0
-    m_Value: {r: 1, g: 1, b: 1, a: 1}
+    m_Value: {r: 1, g: 0.062745094, b: 0.94619334, a: 1}
   highQualityFiltering:
     m_OverrideState: 0
     m_Value: 0
