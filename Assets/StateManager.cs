@@ -11,6 +11,7 @@ public class StateManager : MonoBehaviour
 
     public GameObject winMenu;
     public GameObject loseMenu;
+    public GameObject creditsMenu;
 
     private void Awake() {
         if (Instance != null && Instance != this) {
@@ -28,6 +29,10 @@ public class StateManager : MonoBehaviour
 
     public void startNextLevel() {
         currentLevel += 1;
+        if (currentLevel+1 == SceneManager.sceneCountInBuildSettings)
+        {
+            creditsMenu.SetActive(true);
+        }
         startLevel(currentLevel);
     }
 
@@ -90,6 +95,8 @@ public class StateManager : MonoBehaviour
     public void returnToMainMenu() {
         resetTimeScale();
         hideGameplayMenus();
+        creditsMenu.SetActive(false);
+        Debug.Log("DID IT!");
         SceneManager.LoadScene(0);
     }
     

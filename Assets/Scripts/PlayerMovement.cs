@@ -20,16 +20,20 @@ public class PlayerMovement : MonoBehaviour
 
     private float hinput;
     private bool jinput;
-    private bool jinputHold; 
+    private bool jinputHold;
 
-    public float groundCheckDistance;
+    public float groundCheckDistance = 0.2f;
     public bool playerJump = false;
     private Vector2 playerJumpSlowForce = new Vector2(0, -4f);
     private float maxFallSpeed = 10;
+
+    // Time
     private int coyoteTimeMax = 7;                              // amount of frames late a player can be with their jump and still jump after leaving the ground
-    private float coyoteTimer = 0;                              // tracks coyote time
+    private float coyoteTimer = 0;                              
     private int inputBufferJump = 5;                            // amount of frames early a player can be with their jump input
-    private float inputBufferJumpTimer = 0;                     // tracks jump buffer
+    private float inputBufferJumpTimer = 0;                     
+    private float invincibilityBaseTime = 60 * 2.5f;            // amount of frames of invinicibility the player receives on getting hit
+    private float invincibilityTimer = 0;                       
 
     public Vector3 boxSize;
     private bool lastGrounded;
@@ -122,7 +126,7 @@ public class PlayerMovement : MonoBehaviour
             initiateJump();
         }
 
-        if (IsGrounded() && !lastGrounded) {
+        if (IsGrounded() && _rb.velocity.y <= 0 && !lastGrounded) {
             float _xs = landScaleX * initXScale * Mathf.Sign(getXScale());
             float _ys = landScaleY * Mathf.Sign(getYScale());
             setScale(new Vector3(_xs, _ys, getZScale()));
@@ -132,7 +136,7 @@ public class PlayerMovement : MonoBehaviour
             _rb.velocity = new Vector2(_rb.velocity.x, -maxFallSpeed);
         }
 
-        lastGrounded = IsGrounded() && _rb.velocity.y <= 0;
+        lastGrounded = IsGrounded();
 
         // Visuals
         _spriteAnimator.SetFloat("vspeed", _rb.velocity.y);
@@ -147,17 +151,18 @@ public class PlayerMovement : MonoBehaviour
         // Time management
         coyoteTimer = decrementTimer(coyoteTimer, 60);
         inputBufferJumpTimer = decrementTimer(inputBufferJumpTimer, 60);
+        invincibilityTimer = decrementTimer(invincibilityTimer, 60);
     }
 
     void OnDrawGizmos()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(groundCheck.position, 0.1f);
+        Gizmos.DrawSphere(groundCheck.position, groundCheckDistance);
     }
 
     private bool IsGrounded()
     {
-        return Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+        return Physics2D.OverlapCircle(groundCheck.position, groundCheckDistance, groundLayer);
     }
 
     private float decrementTimer(float timer) {
@@ -204,10 +209,20 @@ public class PlayerMovement : MonoBehaviour
     //    horizontal = context.ReadValue<Vector2>().x;
     //}
 
+    private void takeDamage(int damage)
+    {
+        StateManager _manager = FindObjectOfType<StateManager>();
+        //_manager.life -= damage;
+    }
+
     private int getKeyInt(KeyCode key) {
         return Input.GetKey(key) ? 1 : 0; 
     }
 
+    private void giveInvincibility()
+    {
+        invincibilityTimer = invincibilityBaseTime;
+    }
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -220,6 +235,11 @@ public class PlayerMovement : MonoBehaviour
         } else if (other.CompareTag("DeathBox")) {
             _manager.setStateLoss();
 
+        } else if (other.CompareTag("Enemy"))
+        {
+            // check if the player has invincibility; if not, take damage and give them invincibility
+            takeDamage(1);
+            giveInvincibility();
         }
     }
 
