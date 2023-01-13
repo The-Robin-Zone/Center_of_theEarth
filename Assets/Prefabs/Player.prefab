@@ -264,7 +264,7 @@ GameObject:
   - component: {fileID: 121729316865486158}
   - component: {fileID: 121729316865486257}
   m_Layer: 0
-  m_Name: Scope Center
+  m_Name: ScopeCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -303,7 +303,6 @@ MonoBehaviour:
   laserGun: {fileID: 121729316304845345}
   IsBeamActive: 1
   ShootType: {fileID: 0}
-  ammoAmount: {fileID: 0}
   speed: 10
   target: {fileID: 0}
   bullet: {fileID: 2578707382079463963, guid: 589cc7bf74848480995559e1ac250100, type: 3}
@@ -528,8 +527,11 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 64
+  moveSpeed: 4.25
+  jumpingPower: 6.5
   groundCheckDistance: 0.1
   playerJump: 0
+  maxFallSpeed: 10
   boxSize: {x: 0.4, y: 0.41, z: 0}
 --- !u!70 &8434901652508678139
 CapsuleCollider2D:
@@ -575,7 +577,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3845c5f2de4ad40538975393be78b7a2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  life: 3
   ammoAmount: {fileID: 0}
   lifeAmount: {fileID: 0}
 --- !u!114 &142761213391565330
@@ -707,7 +708,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1882602445943271382
@@ -907,7 +908,7 @@ SpriteRenderer:
   m_Size: {x: 5.12, y: 5.12}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &6151979724376874762
