@@ -15,10 +15,11 @@ public class PatrollingEnemyBehavier : MonoBehaviour
     [HideInInspector]public bool inRange;
     public GameObject hotZone;
     public GameObject triggerArea;
+    [HideInInspector] public Animator anim;
     #endregion
 
     #region Private Variables
-    private Animation anim;
+
     private float Timer;
     private float distance; // stores the distance between the enemy and player
     private bool attackMode; // enemy enters attack mode
@@ -29,7 +30,7 @@ public class PatrollingEnemyBehavier : MonoBehaviour
     {
         SelectTarget();
         Timer = timer;
-     //   anim = GetComponent<Animator>();
+        anim = GetComponent<Animator>();
 
     }
 
@@ -68,32 +69,34 @@ public class PatrollingEnemyBehavier : MonoBehaviour
         if (cooling)
         {
             cooldown();
-            //anim.setBool("Attack", false);
+            anim.SetBool("Attack", false);
         }
     }
 
     private void Move()
     {
-        // anim.SetBool("canWalk", true);
-        // if(!anim.GetCurrentAnimationStateInfo(0).IsName("name of attack animation"){}
-        
-        Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
-        transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+         anim.SetBool("Walk", true);
+        if (!anim.GetCurrentAnimatorStateInfo(0).IsName("Attack")){
+
+            Vector2 targetPosition = new Vector2(target.position.x, transform.position.y);
+            transform.position = Vector2.MoveTowards(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+
+        }
     }
 
     void Attack()
     {
         timer = Timer;//reset timer when player enter attack range
         attackMode = true; // to check if enemy is still attacking or not
-        //anim.SetBool("canWalk", false);
-        //anim.SetBool("Attack", true);
+        anim.SetBool("Walk", false);
+        anim.SetBool("Attack", true);
     }
 
     private void stopAttack()
     {
         cooling = false;
         attackMode = false;
-       // anim.SetBool("", false);
+       anim.SetBool("Attack", false);
     }
 
     private bool InsideLimits()
