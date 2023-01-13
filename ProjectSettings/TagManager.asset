@@ -12,6 +12,7 @@ TagManager:
   - LivesText
   - AmmoText
   - StaticGround
+  - NewTile
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,6 @@ TagManager:
   - Water
   - UI
   - front
-  - 
   - 
   - 
   - 
