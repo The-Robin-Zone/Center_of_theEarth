@@ -15,10 +15,9 @@ public class TileLogic : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
 
-        if (col.gameObject.tag == "Ground" && flag == true)
+        if ((col.gameObject.tag == "Ground" || col.gameObject.tag == "StaticGround") && flag == true)
         {
             flag = false;
-            Debug.Log("collided with Ground");
             xOffset = (float)(Math.Round(bulletTile.transform.position.x * 2) / 2);
             yOffset = (float)(Math.Round(bulletTile.transform.position.y * 2) / 2);
 

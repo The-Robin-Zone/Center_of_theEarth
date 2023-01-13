@@ -15,8 +15,5 @@ public class Global_Variables : MonoBehaviour
     {
         ammoAmount.text = ammo.ToString();
         lifeAmount.text = life.ToString();
-
-        Debug.Log("ammo: " + ammoAmount.text);
-        Debug.Log("life: " + lifeAmount.text);
     }
 }

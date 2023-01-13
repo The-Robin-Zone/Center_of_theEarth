@@ -1,0 +1,41 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+        "."
+    ],
+    "fileStates": {
+        ":/automap-tiles.tsx": {
+            "scaleInDock": 1
+        },
+        "Cave - Platforms.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 0.5
+        },
+        "Mossy - TileSet.tsx": {
+            "scaleInDock": 0.25,
+            "scaleInEditor": 0.33
+        }
+    },
+    "last.imagePath": "C:/Users/Maayan/Documents/GitHub/Center_of_theEarth/Assets/Assets/levelDesign/tiles/CaveAssetsMaaot/Assets 1024 Cave",
+    "map.fixedSize": false,
+    "map.tileHeight": 152,
+    "map.tileWidth": 152,
+    "openFiles": [
+        "Mossy - TileSet.tsx"
+    ],
+    "project": "tiles.tiled-project",
+    "recentFiles": [
+        "Mossy - TileSet.tsx",
+        "Cave - Platforms.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 152,
+        "width": 152
+    },
+    "tileset.transparentColor": "#000000"
+}

@@ -16,8 +16,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public LayerMask groundLayer;
 
-    private float moveSpeed = 4.25f;
-    private float jumpingPower = 6.5f;
+    public float moveSpeed = 4.25f;
+    public float jumpingPower = 6.5f;
 
     private float hinput;
     private bool jinput;
@@ -26,7 +26,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundCheckDistance = 0.2f;
     public bool playerJump = false;
     private Vector2 playerJumpSlowForce = new Vector2(0, -4f);
-    private float maxFallSpeed = 10;
+    public float maxFallSpeed = 10;
 
     // Time
     private int coyoteTimeMax = 7;                              // amount of frames late a player can be with their jump and still jump after leaving the ground
@@ -57,6 +57,7 @@ public class PlayerMovement : MonoBehaviour
         _spriteAnchor = transform.Find("SpriteAnchor");
         _spriteAnimator = _spriteAnchor.Find("Sprite").GetComponent<Animator>();
         _spriteRenderer = _spriteAnchor.Find("Sprite").GetComponent<SpriteRenderer>();
+        //_spriteRenderer.color = Color.white;
         initXScale = getXScale();
         initYScale = getYScale();
     }
@@ -145,7 +146,6 @@ public class PlayerMovement : MonoBehaviour
         _spriteAnimator.SetBool("grounded", IsGrounded());
         _spriteAnimator.SetBool("moving", hinput != 0);
 
-        _spriteAnchor
 
         float _xscale = Mathf.Lerp(getXScale(), initXScale * Mathf.Sign(getXScale()), scaleLerpFactor);
         float _yscale = Mathf.Lerp(getYScale(), initYScale, scaleLerpFactor);
