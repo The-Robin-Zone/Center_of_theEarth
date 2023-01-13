@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
-    private GameObject player;
-    private Rigidbody2D rb;
+
     public float force;
     public LayerMask groundLayer;
-
     Vector3 targetPosition;
     public float speed;
+
+    private GameObject player;
+    private Rigidbody2D rb;
 
     private void Start()
     {
