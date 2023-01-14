@@ -34,6 +34,21 @@ namespace Pathfinding {
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
 			if (target != null && ai != null) ai.destination = target.position;
+			Flip();
+		}
+
+		public void Flip()
+		{
+			Vector3 rotation = transform.eulerAngles;
+			if (transform.position.x > target.position.x)
+			{
+				rotation.y = 180f;
+			}
+			else
+			{
+				rotation.y = 0f;
+			}
+			transform.eulerAngles = rotation;
 		}
 	}
 }
