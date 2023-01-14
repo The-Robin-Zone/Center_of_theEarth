@@ -38,9 +38,9 @@ public class GunAim : MonoBehaviour
         Gun = transform.Find("Gun").Find("Sprite");
         Player = GameObject.FindGameObjectWithTag("Player");
 
-        cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
-        slider = cooldownObj.GetComponent<Slider>();
-        slider.value = 3;
+        //cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
+        //slider = cooldownObj.GetComponent<Slider>();
+        //slider.value = 3;
     }
 
     // Update is called once per frame
@@ -64,7 +64,8 @@ public class GunAim : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            slider.value = 3;
+            
+            //slider.value = 3;
 
             if (shootType == "Beam")
             {
@@ -84,7 +85,7 @@ public class GunAim : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
 
-            slider.value = 3;
+            //slider.value = 3;
 
             if (laserGun.activeSelf == true)
             {

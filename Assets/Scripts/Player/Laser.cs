@@ -18,8 +18,8 @@ public class Laser : MonoBehaviour
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
-        cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
-        slider = cooldownObj.GetComponent<Slider>();
+        //cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
+        //slider = cooldownObj.GetComponent<Slider>();
 
     }
     private void FixedUpdate()
@@ -59,21 +59,21 @@ public class Laser : MonoBehaviour
 
 
             //If Ray hits a ground tile, disable it
-            if (hit.collider != null && hit.transform.gameObject.tag == "Ground" && slider.value == 0)
+            if (hit.collider != null && hit.transform.gameObject.tag == "Ground") //&& slider.value == 0)
             {
                 Debug.DrawRay(transform.position, hit.point, Color.white);
                 hit.transform.gameObject.SetActive(false);
-                slider.value = 3;
+                //slider.value = 3;
                 Global_Variables.ammo++;
 
             }
             else if (hit.collider != null && hit.transform.gameObject.tag == "Ground")
             {
-                slider.value = slider.value - 0.1f;
+                //slider.value = slider.value - 0.1f;
             }
             else if (hit.collider == null || hit.transform.gameObject.tag != "Ground")
             {
-                slider.value = 3;
+                //slider.value = 3;
             }
         }
         else
