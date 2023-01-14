@@ -67,8 +67,13 @@ public class GunAim : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1) && laserGun.activeSelf == false)
+        if (Input.GetMouseButtonDown(1))
         {
+            if (laserGun.activeSelf == true)
+            {
+                laserGun.SetActive(false);
+            }
+
             IsBeamActive = !IsBeamActive;
 
             if (IsBeamActive)
