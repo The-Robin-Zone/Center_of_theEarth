@@ -159,6 +159,8 @@ MonoBehaviour:
   ammoAmount: {fileID: 0}
   laserFirePoint: {fileID: 121729318120413751}
   m_lineRenderer: {fileID: 121729316304845346}
+  cooldownObj: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!114 &121729316304845348
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,6 +302,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c51b4a3943d5940b8a50ff429c130400, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Player: {fileID: 0}
   laserGun: {fileID: 121729316304845345}
   IsBeamActive: 1
   shootType: Beam
@@ -307,6 +310,8 @@ MonoBehaviour:
   target: {fileID: 0}
   bullet: {fileID: 2578707382079463963, guid: 589cc7bf74848480995559e1ac250100, type: 3}
   bulletPos: {fileID: 0}
+  cooldownObj: {fileID: 0}
+  slider: {fileID: 0}
 --- !u!1 &121729317312338713
 GameObject:
   m_ObjectHideFlags: 0
@@ -722,8 +727,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1882602445943271382}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.85, y: -2.3, z: 0}
-  m_LocalScale: {x: 6.391602, y: 11.5888815, z: 2}
+  m_LocalPosition: {x: -6.5, y: -2.3, z: 0}
+  m_LocalScale: {x: 8.830055, y: 16.010143, z: 4}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 121729317312338712}
