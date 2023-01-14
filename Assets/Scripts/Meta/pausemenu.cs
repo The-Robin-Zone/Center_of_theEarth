@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class pausemenu : MonoBehaviour
 {
-    [SerializeField] GameObject pauseMenu;
+    public GameObject pauseMenu;
     public GameObject pausebutton;
     public GameObject resumebutton;
     public GameObject scope;
@@ -52,7 +52,8 @@ public class pausemenu : MonoBehaviour
     public void Restart()
     {
         resetTimeScale();
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        StateManager _manager = GameObject.Find("GameManager").GetComponent<StateManager>();
+        _manager.restartLevel();
     }
 
     

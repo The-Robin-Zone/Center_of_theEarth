@@ -16,7 +16,7 @@ public class GunAim : MonoBehaviour
     private Transform Gun;
 
     public bool IsBeamActive = true;
-    public TextMeshProUGUI ShootType;
+    public string shootType = "Shoot";
 
     //for shooting gun
     public float speed = 10;
@@ -27,7 +27,6 @@ public class GunAim : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-        ShootType = GameObject.Find("HUDShootType").GetComponent<TextMeshProUGUI>();
 
         laserGun.SetActive(false);
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -57,11 +56,11 @@ public class GunAim : MonoBehaviour
          
         if (Input.GetMouseButtonDown(0))
         {
-            if (ShootType.text == "Beam")
+            if (shootType == "Beam")
             {
                 ShootBeam();
             }
-            if (ShootType.text == "Shoot")
+            if (shootType == "Shoot")
             {
                 ShootTiles();
             }
@@ -78,11 +77,11 @@ public class GunAim : MonoBehaviour
 
             if (IsBeamActive)
             {
-                ShootType.text = "Beam";
+                shootType = "Beam";
             }
             else
             {
-                ShootType.text = "Shoot";
+                shootType = "Shoot";
             }
         }
     }
