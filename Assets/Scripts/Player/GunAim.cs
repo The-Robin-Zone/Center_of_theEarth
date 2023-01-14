@@ -10,6 +10,7 @@ public class GunAim : MonoBehaviour
     private Camera mainCam;
     private Vector3 mousePos;
 
+    public GameObject Player;
     public GameObject laserGun;
     private Transform InnerHand;
     private Transform OuterHand;
@@ -27,12 +28,12 @@ public class GunAim : MonoBehaviour
     // Start is called before the first frame update
     void Awake()
     {
-
         laserGun.SetActive(false);
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         InnerHand = transform.Find("InnerHand");
         OuterHand = transform.Find("OuterHand");
         Gun = transform.Find("Gun").Find("Sprite");
+        Player = GameObject.FindGameObjectWithTag("Player");
     }
 
     // Update is called once per frame
@@ -67,8 +68,13 @@ public class GunAim : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1) && laserGun.activeSelf == false)
+        if (Input.GetMouseButtonDown(1))
         {
+            if (laserGun.activeSelf == true)
+            {
+                laserGun.SetActive(false);
+            }
+
             IsBeamActive = !IsBeamActive;
 
             if (IsBeamActive)
@@ -80,6 +86,7 @@ public class GunAim : MonoBehaviour
                 shootType = "Shoot";
             }
         }
+
     }
 
     private void SetHandOrientation (Transform obj, Quaternion quaternion, int yScale) {
@@ -115,20 +122,49 @@ public class GunAim : MonoBehaviour
 
             GameObject CurrBullet;
 
-            //if aim is directly down enter if
-            if ((AimVector.y < transform.position.y) && (Math.Abs(AimVector.x - transform.position.x) < 1))
+
+            //if aim is directly down and jump
+            if ((AimVector.y < transform.position.y) && (Math.Abs(AimVector.x - transform.position.x) < 2) && IsPlayerInAir())
             {
                 CurrBullet = Instantiate(bullet, transform.position - new Vector3(0,1,0), Quaternion.identity);
+                CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
+                Global_Variables.ammo--;
             }
+            //if aim is directly down and didnt jump
+            else if ((AimVector.y < transform.position.y) && (Math.Abs(AimVector.x - transform.position.x) < 2))
+            {
+                Debug.Log("player aimed down and shot, but not in the air so dont do anything!");
+
+            }
+            //if aim is not down
             else
             {
                 CurrBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+                CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
+                Global_Variables.ammo--;
             }
-
-            CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
-
-            Global_Variables.ammo--;
 
         }
     }
+
+    public bool IsPlayerInAir()
+    {
+        Vector3 playerFeet = Player.transform.position - new Vector3(0, 0.31f, 0);
+
+        RaycastHit2D hit = Physics2D.Raycast(playerFeet, playerFeet - new Vector3(0,1,0), 0.1f);
+        Debug.DrawRay(playerFeet, new Vector3(0, -1, 0), Color.white);
+
+        //If Ray hits a ground tile, enter loop
+        if (hit.collider != null && (hit.transform.gameObject.tag != "Player"))
+        {
+            return false;
+
+        }
+        else
+        {
+            return true;
+        }
+
+    }
+
 }
