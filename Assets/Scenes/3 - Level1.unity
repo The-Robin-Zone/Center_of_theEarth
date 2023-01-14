@@ -20447,7 +20447,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: a4ee5e86f22017e47b5f26fa83b6aaca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -20577,6 +20577,42 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1352820612}
     m_Modifications:
+    - target: {fileID: 2848876900049984618, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_Size.x
+      value: 0.43088412
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848876900049984618, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_Size.y
+      value: 1.9979165
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848876900049984618, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_Offset.x
+      value: -0.06520098
+      objectReference: {fileID: 0}
+    - target: {fileID: 2848876900049984618, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.058547013
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653713353255419005, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7798559
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653713353255419005, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.34398165
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653713353255419005, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.088
+      objectReference: {fileID: 0}
+    - target: {fileID: 3653713353255419005, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.045
+      objectReference: {fileID: 0}
+    - target: {fileID: 4019993857023510539, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6113403419488200573, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -24526,7 +24562,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2425059767721473492, guid: 9d20dd36a9362634fa1d4ad0f1c679e1, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.1382113
+      value: 2.213
       objectReference: {fileID: 0}
     - target: {fileID: 2425059767721473492, guid: 9d20dd36a9362634fa1d4ad0f1c679e1, type: 3}
       propertyPath: m_LocalPosition.y
@@ -31304,6 +31340,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: -41.515
       objectReference: {fileID: 0}
+    - target: {fileID: 1040205328559540129, guid: 00dbbc420e18e194486147cca5246072, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1040205328559540131, guid: 00dbbc420e18e194486147cca5246072, type: 3}
       propertyPath: m_Name
       value: Glowing blue flower
@@ -31317,6 +31357,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 355932138}
     m_Modifications:
+    - target: {fileID: 1302001745078764640, guid: 510e3aa53d693644fb21a8fd512c6c76, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1302001745078764646, guid: 510e3aa53d693644fb21a8fd512c6c76, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -31422,6 +31466,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1450729995801772239, guid: f9803825f4326a14b95e20046afee162, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f9803825f4326a14b95e20046afee162, type: 3}
 --- !u!1001 &1452720191179411079
@@ -31431,6 +31479,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 355932138}
     m_Modifications:
+    - target: {fileID: 1452720192009700235, guid: fcb4c71e3aecbae44ac1252cfb761e13, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 1452720192009700236, guid: fcb4c71e3aecbae44ac1252cfb761e13, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -31536,6 +31588,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4701590370481601742, guid: 94b480ce1b6e6fe4f9175e6193b7c910, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 94b480ce1b6e6fe4f9175e6193b7c910, type: 3}
 --- !u!1001 &6733310833287811527
@@ -31545,6 +31601,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 355932138}
     m_Modifications:
+    - target: {fileID: 6733310833846888994, guid: 0f77491f062cfa94db4d6cad6fab8953, type: 3}
+      propertyPath: m_SortingOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 6733310833846888996, guid: 0f77491f062cfa94db4d6cad6fab8953, type: 3}
       propertyPath: m_RootOrder
       value: 6

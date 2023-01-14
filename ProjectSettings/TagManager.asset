@@ -13,6 +13,7 @@ TagManager:
   - AmmoText
   - StaticGround
   - NewTile
+  - ShootingTile
   layers:
   - Default
   - TransparentFX
@@ -21,6 +22,7 @@ TagManager:
   - Water
   - UI
   - front
+  - 
   - 
   - 
   - 

@@ -13,7 +13,7 @@ public class Destroy_Enemy : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.CompareTag("Player"))
+        if (collision.gameObject.CompareTag("Player") || collision.gameObject.CompareTag("ShootingTile"))
         {
 
             Destroy(enemyParent.gameObject);
