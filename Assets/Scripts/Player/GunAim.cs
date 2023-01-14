@@ -38,9 +38,9 @@ public class GunAim : MonoBehaviour
         Gun = transform.Find("Gun").Find("Sprite");
         Player = GameObject.FindGameObjectWithTag("Player");
 
-        //cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
-        //slider = cooldownObj.GetComponent<Slider>();
-        //slider.value = 3;
+        cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
+        slider = cooldownObj.GetComponent<Slider>();
+        slider.value = 3;
     }
 
     // Update is called once per frame
@@ -65,12 +65,7 @@ public class GunAim : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             
-            //slider.value = 3;
-
-            if (shootType == "Beam")
-            {
-                Debug.Log(shootType);
-            }
+            slider.value = 3;
            
             if (shootType.Equals("Beam"))
             {
@@ -85,7 +80,7 @@ public class GunAim : MonoBehaviour
         if (Input.GetMouseButtonDown(1))
         {
 
-            //slider.value = 3;
+            slider.value = 3;
 
             if (laserGun.activeSelf == true)
             {
@@ -119,12 +114,10 @@ public class GunAim : MonoBehaviour
         if (laserGun.activeSelf == false)
         {
             laserGun.SetActive(true);
-            Debug.Log("IT WAS FALSE AND NOW TRUE");
         }
         else
         {
             laserGun.SetActive(false);
-            Debug.Log("IT WAS TRUE!!!");
         }
     }
 
@@ -145,6 +138,9 @@ public class GunAim : MonoBehaviour
             {
                 CurrBullet = Instantiate(bullet, transform.position - new Vector3(0,1,0), Quaternion.identity);
                 CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
+                //Vector3 _scale = CurrBullet.transform.localScale;
+                //float _mult = Global_Variables.shotTileMultiplier;
+                //CurrBullet.transform.localScale = new Vector3(_scale.x * _mult, _scale.y * _mult, _scale.z);
                 Global_Variables.ammo--;
             }
             //if aim is directly down and didnt jump
@@ -158,6 +154,9 @@ public class GunAim : MonoBehaviour
             {
                 CurrBullet = Instantiate(bullet, transform.position, Quaternion.identity);
                 CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
+                //Vector3 _scale = CurrBullet.transform.localScale;
+                //float _mult = Global_Variables.shotTileMultiplier;
+                //CurrBullet.transform.localScale = new Vector3(_scale.x * _mult, _scale.y * _mult, _scale.z);
                 Global_Variables.ammo--;
             }
 

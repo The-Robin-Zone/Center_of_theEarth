@@ -16,9 +16,12 @@ public class StateManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject HUD;
 
+    public bool didInitialMenuUpdate = false;
+
     private void Awake() {
         if (Instance != null && Instance != this) {
-            Destroy(this);
+            // destroy the object which was using this script - the new GameManager using this attempt at a new instance of StateManager
+            Destroy(this.gameObject);
         }
         else {
             Instance = this;
@@ -33,6 +36,15 @@ public class StateManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         startLevelHelper();
+    }
+
+    public void Update()
+    {
+        if (!didInitialMenuUpdate)
+        {
+            didInitialMenuUpdate = true;
+            //restartLevel();
+        }
     }
 
     public void startNextLevel() {
@@ -77,9 +89,10 @@ public class StateManager : MonoBehaviour
         hideGameplayMenus();
         Global_Variables.ammo = 0;
         Global_Variables.life = Global_Variables.max_life;
-        int levelInd = SceneManager.GetActiveScene().buildIndex;
-        HUD.SetActive(!isMenuScene(levelInd));
-        pauseButton.SetActive(!isMenuScene(levelInd));
+        //int levelInd = SceneManager.GetActiveScene().buildIndex;
+        Debug.Log("In Helper scene index: " + currentLevel);
+        HUD.SetActive(!isMenuScene(currentLevel));
+        pauseButton.SetActive(!isMenuScene(currentLevel));
     }
 
     public void restartLevel()

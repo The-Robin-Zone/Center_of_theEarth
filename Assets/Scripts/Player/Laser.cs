@@ -15,11 +15,15 @@ public class Laser : MonoBehaviour
     public GameObject cooldownObj;
     public Slider slider;
 
+    private float shotForce = 5.0f;
+    private float suctionTimeMult = 1.25f;
+    private float minSuctionMouseDistance = 0.8f;
+
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
-        //cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
-        //slider = cooldownObj.GetComponent<Slider>();
+        cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
+        slider = cooldownObj.GetComponent<Slider>();
 
     }
     private void FixedUpdate()
@@ -34,13 +38,13 @@ public class Laser : MonoBehaviour
         Vector2 endPos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
         // if mouse is close to player while shooting
-        if (!(Math.Abs(startPos.x - endPos.x) < 1f && Math.Abs(startPos.y - endPos.y) < 1f))
+        if (!((endPos - startPos).magnitude < minSuctionMouseDistance))
         {
 
             //Change Last Value for beam distance (only beam, not raycast)
-            endPos = (endPos - startPos).normalized * 5f;
+            endPos = (endPos - startPos).normalized * shotForce;
             //Change Last Value for ray distance (only the raycast, not beam)
-            hit = Physics2D.Raycast(transform.position, transform.right, 5f);
+            hit = Physics2D.Raycast(transform.position, transform.right, shotForce);
 
 
             //Set the start and end position of the Beam so it doesnt go through walls
@@ -62,21 +66,21 @@ public class Laser : MonoBehaviour
 
 
             //If Ray hits a ground tile, disable it
-            if (hit.collider != null && hit.transform.gameObject.tag == "Ground") //&& slider.value == 0)
+            if (hit.collider != null && hit.transform.gameObject.tag == "Ground" && slider.value == 0)
             {
                 Debug.DrawRay(transform.position, hit.point, Color.white);
                 hit.transform.gameObject.SetActive(false);
-                //slider.value = 3;
+                slider.value = 3;
                 Global_Variables.ammo++;
 
             }
             else if (hit.collider != null && hit.transform.gameObject.tag == "Ground")
             {
-                //slider.value = slider.value - 0.1f;
+                slider.value = slider.value - (0.1f * suctionTimeMult);
             }
             else if (hit.collider == null || hit.transform.gameObject.tag != "Ground")
             {
-                //slider.value = 3;
+                slider.value = 3;
             }
         }
         else

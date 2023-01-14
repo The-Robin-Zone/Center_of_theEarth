@@ -13,6 +13,8 @@ public class Global_Variables : MonoBehaviour
     public TextMeshProUGUI lifeAmount;
     public TextMeshProUGUI ShootType;
 
+    public static float shotTileMultiplier = 1f;
+
     public void Awake()
     {
         //ammoAmount = GameObject.Find("HUDAmmoAmount").GetComponent<TextMeshProUGUI>();

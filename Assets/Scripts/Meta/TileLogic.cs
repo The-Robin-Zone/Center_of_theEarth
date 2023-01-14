@@ -22,7 +22,11 @@ public class TileLogic : MonoBehaviour
             yOffset = (float)(Math.Round(bulletTile.transform.position.y * 2) / 2);
 
             bulletTile.transform.position= new Vector3(xOffset, yOffset, 0);
-            Instantiate(regTile, bulletTile.transform.position, Quaternion.identity);
+            GameObject tile = Instantiate(regTile, bulletTile.transform.position, Quaternion.identity);
+
+            //Vector3 _scale = tile.transform.localScale;
+            //float _mult = Global_Variables.shotTileMultiplier;
+            //tile.transform.localScale = new Vector3(_scale.x * _mult, _scale.y * _mult, _scale.z);
             Destroy(bulletTile);
         }
         
