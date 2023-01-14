@@ -167,7 +167,7 @@ public class PlayerMovement : MonoBehaviour
         Gizmos.DrawSphere(groundCheck.position, groundCheckDistance);
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, groundCheckDistance, groundLayer);
     }
