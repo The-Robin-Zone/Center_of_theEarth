@@ -26324,6 +26324,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 0}
     - target: {fileID: 121729316865486257, guid: d0d6023ad404944e49d388489d45544a, type: 3}
+      propertyPath: shootType
+      value: Beam
+      objectReference: {fileID: 0}
+    - target: {fileID: 121729316865486257, guid: d0d6023ad404944e49d388489d45544a, type: 3}
       propertyPath: ammoAmount
       value: 
       objectReference: {fileID: 0}
@@ -29939,7 +29943,7 @@ Transform:
   - {fileID: 1352820612}
   - {fileID: 1748098218}
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2000467684
 GameObject:

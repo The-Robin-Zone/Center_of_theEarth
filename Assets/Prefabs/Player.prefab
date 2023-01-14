@@ -302,7 +302,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   laserGun: {fileID: 121729316304845345}
   IsBeamActive: 1
-  ShootType: {fileID: 0}
+  shootType: Beam
   speed: 10
   target: {fileID: 0}
   bullet: {fileID: 2578707382079463963, guid: 589cc7bf74848480995559e1ac250100, type: 3}
@@ -531,6 +531,7 @@ MonoBehaviour:
   groundCheckDistance: 0.1
   playerJump: 0
   maxFallSpeed: 10
+  died: 0
   boxSize: {x: 0.4, y: 0.41, z: 0}
 --- !u!70 &8434901652508678139
 CapsuleCollider2D:
@@ -580,7 +581,7 @@ MonoBehaviour:
   priority: 1
   blendDistance: 0
   weight: 1
-  sharedProfile: {fileID: 11400000, guid: 432e101bced374ce0b18fb0b4dc877ed, type: 2}
+  sharedProfile: {fileID: 11400000, guid: a01ef4b9fa5b742a184dcf33d894d72c, type: 2}
 --- !u!1 &121729318120413748
 GameObject:
   m_ObjectHideFlags: 0

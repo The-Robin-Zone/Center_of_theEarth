@@ -51,7 +51,6 @@ public class pausemenu : MonoBehaviour
 
     public void Restart()
     {
-        resetTimeScale();
         StateManager _manager = GameObject.Find("GameManager").GetComponent<StateManager>();
         _manager.restartLevel();
     }

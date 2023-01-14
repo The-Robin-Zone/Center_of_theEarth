@@ -23,16 +23,21 @@ public class StateManager : MonoBehaviour
         else {
             Instance = this;
         }
+
+        // get the current scene's index for when we're testing and the manager wakes up in a room which isn't the menu
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
     }
 
 
     public void Start() {
         DontDestroyOnLoad(gameObject);
+
+        startLevelHelper();
     }
 
     public void startNextLevel() {
         currentLevel += 1;
-        if (currentLevel+1 == SceneManager.sceneCountInBuildSettings)
+        if (currentLevel == SceneManager.sceneCountInBuildSettings-1)
         {
             creditsMenu.SetActive(true);
         }
@@ -71,8 +76,10 @@ public class StateManager : MonoBehaviour
         // hide any menus - we're playing the level now
         hideGameplayMenus();
         Global_Variables.ammo = 0;
-        HUD.SetActive(!isMenuScene(currentLevel));
-        pauseButton.SetActive(!isMenuScene(currentLevel));
+        Global_Variables.life = Global_Variables.max_life;
+        int levelInd = SceneManager.GetActiveScene().buildIndex;
+        HUD.SetActive(!isMenuScene(levelInd));
+        pauseButton.SetActive(!isMenuScene(levelInd));
     }
 
     public void restartLevel()

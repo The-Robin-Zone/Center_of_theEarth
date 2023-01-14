@@ -17,7 +17,7 @@ public class GunAim : MonoBehaviour
     private Transform Gun;
 
     public bool IsBeamActive = true;
-    public string shootType = "Shoot";
+    public string shootType = "Beam";
 
     //for shooting gun
     public float speed = 10;
@@ -61,16 +61,21 @@ public class GunAim : MonoBehaviour
         foreach (Transform hand in hands) {
             SetHandOrientation(hand, rotQuaternion, yScale);
         }
-         
+
         if (Input.GetMouseButtonDown(0))
         {
             slider.value = 3;
 
             if (shootType == "Beam")
             {
+                Debug.Log(shootType);
+            }
+           
+            if (shootType.Equals("Beam"))
+            {
                 ShootBeam();
             }
-            if (shootType == "Shoot")
+            if (shootType.Equals("Shoot"))
             {
                 ShootTiles();
             }
@@ -113,10 +118,12 @@ public class GunAim : MonoBehaviour
         if (laserGun.activeSelf == false)
         {
             laserGun.SetActive(true);
+            Debug.Log("IT WAS FALSE AND NOW TRUE");
         }
         else
         {
             laserGun.SetActive(false);
+            Debug.Log("IT WAS TRUE!!!");
         }
     }
 
