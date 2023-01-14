@@ -13,6 +13,7 @@ public class ShootingEnemy : MonoBehaviour
     public float minDistance;
     public float timeBetweenShots;
     private float nextShotTime;
+    private bool facingRight = false;
 
 
     private void Update()
@@ -24,15 +25,34 @@ public class ShootingEnemy : MonoBehaviour
             nextShotTime = Time.time + timeBetweenShots;
         }
         
+        if(transform.position.x > target.position.x && facingRight){
+            Flip();
+            Debug.Log("Should Flip");
+            
+        }
+        else if (transform.position.x <= target.position.x && !facingRight)
+        {
+            Flip();
+        }
 
-        if (Vector2.Distance(transform.position, target.position) < minDistance)
+            if (Vector2.Distance(transform.position, target.position) < minDistance)
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
+            Flip();
         }
     }
-
-    void shoot()
+    public void Flip()
     {
-        
+        Vector3 rotation = transform.eulerAngles;
+        if (transform.position.x > target.position.x)
+        {
+            rotation.y = 180f;
+        }
+        else
+        {
+            rotation.y = 0f;
+        }
+        transform.eulerAngles = rotation;
+        facingRight = !facingRight;
     }
 }
