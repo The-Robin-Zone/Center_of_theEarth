@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 2168892321893151658}
   m_Layer: 0
   m_Name: enemy_anim
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -94,9 +94,10 @@ GameObject:
   m_Component:
   - component: {fileID: 2168892322309850466}
   - component: {fileID: 2168892322309850477}
+  - component: {fileID: 9006909619208262108}
   m_Layer: 0
   m_Name: enemy_Collider
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,6 +143,18 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.7015909, y: 2.7879782}
   m_EdgeRadius: 0
+--- !u!114 &9006909619208262108
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2168892322309850467}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 061290a83b6ccef458d7b7a0b12bcc56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2168892322573612780
 GameObject:
   m_ObjectHideFlags: 0

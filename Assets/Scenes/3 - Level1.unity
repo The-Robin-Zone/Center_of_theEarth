@@ -8936,16 +8936,6 @@ Tilemap:
   m_GameObject: {fileID: 601202625}
   m_Enabled: 1
   m_Tiles:
-  - first: {x: -38, y: -9, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 6
-      m_TileSpriteIndex: 6
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
   - first: {x: -23, y: -4, z: 0}
     second:
       serializedVersion: 2
@@ -9000,8 +8990,8 @@ Tilemap:
     m_Data: {fileID: 11400000, guid: 3fbc145a30adb684d99eeec5139d126a, type: 2}
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 1fe6844d4bcecde4ea06a28686e49734, type: 2}
-  - m_RefCount: 1
-    m_Data: {fileID: 11400000, guid: 63a201ed3f14fcf40b5338bd67cdbe65, type: 2}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
@@ -9015,10 +9005,10 @@ Tilemap:
     m_Data: {fileID: 951625685, guid: 3cc84e74f2cb0d8429ff6af11591fd1b, type: 3}
   - m_RefCount: 1
     m_Data: {fileID: 483109541, guid: 3cc84e74f2cb0d8429ff6af11591fd1b, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: 1292711318, guid: 2406590841486514399ed9ea908478cf, type: 3}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   m_TileMatrixArray:
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data:
       e00: 1
       e01: 0
@@ -9037,7 +9027,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 5
+  - m_RefCount: 4
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -12267,6 +12257,26 @@ PrefabInstance:
       propertyPath: rightLimit
       value: 
       objectReference: {fileID: 1780048540}
+    - target: {fileID: 6113403420993434598, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1.1144344
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113403420993434598, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.821823
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113403420993434598, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1.48517
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113403420993434598, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.22223
+      objectReference: {fileID: 0}
+    - target: {fileID: 6113403420993434598, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.964
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 03f4308d6d38937429c2a15c32d65f1e, type: 3}
 --- !u!4 &864302862 stripped
