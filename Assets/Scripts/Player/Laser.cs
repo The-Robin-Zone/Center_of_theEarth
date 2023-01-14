@@ -46,9 +46,12 @@ public class Laser : MonoBehaviour
             //Set the start and end position of the Beam so it doesnt go through walls
             m_lineRenderer.SetPosition(0, startPos);
 
-            if (hit.collider != null)
+            if (hit.collider != null && hit.transform.gameObject.tag == "Ground")
             {
-                //endPos = (Vector2)hit.transform.position;
+                m_lineRenderer.SetPosition(1, (Vector2)hit.transform.position);
+            }
+            else if (hit.collider != null && hit.transform.gameObject.tag == "StaticGround")
+            {
                 m_lineRenderer.SetPosition(1, (Vector2)hit.transform.position);
             }
             else
