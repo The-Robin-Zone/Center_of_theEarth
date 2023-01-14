@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8287475434517787291}
   - component: {fileID: 3899900561572670071}
   - component: {fileID: 7131317557556448710}
+  - component: {fileID: 1416807744562753292}
   m_Layer: 0
   m_Name: Doorway
   m_TagString: RoomTransition
@@ -111,3 +112,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.13274248, y: 0.13862967}
   m_EdgeRadius: 0
+--- !u!114 &1416807744562753292
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2571735783145855731}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b6bb869817a9fa408596a83b8d28d8d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bringUpLevelFinishMenu: 1

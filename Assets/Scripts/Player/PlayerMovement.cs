@@ -37,6 +37,7 @@ public class PlayerMovement : MonoBehaviour
     private float invincibilityTimer = 0;
 
     public bool died = false;
+    public bool finishedLevel = false;
 
     public Vector3 boxSize;
     private bool lastGrounded;
@@ -250,10 +251,17 @@ public class PlayerMovement : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         StateManager _manager = FindObjectOfType<StateManager>();
-        if (other.CompareTag("RoomTransition"))
+        if (other.CompareTag("RoomTransition") && !finishedLevel)
         {
-            // get the gamemanager and make it restart the game
-            _manager.finishLevel();
+            finishedLevel = true;
+            if (_manager.currentLevel != 1)
+            {
+                _manager.finishLevel();
+            } else
+            {
+                // otherwise go straight into the next level
+                _manager.startNextLevel();
+            }
 
         } else if (other.CompareTag("DeathBox")) {
             _manager.setStateLoss();

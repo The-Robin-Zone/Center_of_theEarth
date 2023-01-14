@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/1 - Main Menu.unity
     guid: 88e218249d1d34c4cbc7b0ddc3b94ffd
   - enabled: 1
+    path: Assets/Scenes/1.1 - Falling.unity
+    guid: 6cb835939f73e1245b2130c50e19c5a7
+  - enabled: 1
     path: Assets/Scenes/2 - Level0 - Tutorial.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1

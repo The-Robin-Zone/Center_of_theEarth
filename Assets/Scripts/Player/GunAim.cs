@@ -57,7 +57,7 @@ public class GunAim : MonoBehaviour
         Quaternion rotQuaternion = Quaternion.Euler(0, 0, rotZ);
         transform.rotation = rotQuaternion;
 
-        Transform[] hands = {OuterHand, InnerHand, Gun};
+        Transform[] hands = { OuterHand, InnerHand };//, Gun};
         foreach (Transform hand in hands) {
             SetHandOrientation(hand, rotQuaternion, yScale);
         }
