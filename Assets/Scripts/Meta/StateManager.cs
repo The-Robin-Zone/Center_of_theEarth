@@ -13,6 +13,8 @@ public class StateManager : MonoBehaviour
     public GameObject loseMenu;
     public GameObject creditsMenu;
     public GameObject pauseButton;
+    public GameObject pauseMenu;
+    public GameObject HUD;
 
     private void Awake() {
         if (Instance != null && Instance != this) {
@@ -45,14 +47,17 @@ public class StateManager : MonoBehaviour
     private void startLevel(int levelIndex) {
         SceneManager.LoadScene(levelIndex);
         startLevelHelper();
-
-        Global_Variables.ammo = 0;
     }
 
     private void startLevel(string levelName)
     {
         SceneManager.LoadScene(levelName);
         startLevelHelper();
+    }
+
+    private bool isMenuScene(int levelIndex)
+    {
+        return (levelIndex == 0 || levelIndex == SceneManager.sceneCountInBuildSettings - 1);
     }
 
     /// <summary>
@@ -65,6 +70,9 @@ public class StateManager : MonoBehaviour
 
         // hide any menus - we're playing the level now
         hideGameplayMenus();
+        Global_Variables.ammo = 0;
+        HUD.SetActive(!isMenuScene(currentLevel));
+        pauseButton.SetActive(!isMenuScene(currentLevel));
     }
 
     public void restartLevel()
@@ -77,6 +85,7 @@ public class StateManager : MonoBehaviour
     {
         winMenu.SetActive(false);
         loseMenu.SetActive(false);
+        pauseMenu.SetActive(false);
     }
 
 
@@ -99,7 +108,6 @@ public class StateManager : MonoBehaviour
         resetTimeScale();
         hideGameplayMenus();
         creditsMenu.SetActive(false);
-        Debug.Log("DID IT!");
         SceneManager.LoadScene(0);
     }
     
