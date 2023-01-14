@@ -34,7 +34,9 @@ public class PlayerMovement : MonoBehaviour
     private int inputBufferJump = 5;                            // amount of frames early a player can be with their jump input
     private float inputBufferJumpTimer = 0;                     
     private float invincibilityBaseTime = 60 * 2.5f;            // amount of frames of invinicibility the player receives on getting hit
-    private float invincibilityTimer = 0;                       
+    private float invincibilityTimer = 0;
+
+    public bool died = false;
 
     public Vector3 boxSize;
     private bool lastGrounded;
@@ -57,7 +59,7 @@ public class PlayerMovement : MonoBehaviour
         _spriteAnchor = transform.Find("SpriteAnchor");
         _spriteAnimator = _spriteAnchor.Find("Sprite").GetComponent<Animator>();
         _spriteRenderer = _spriteAnchor.Find("Sprite").GetComponent<SpriteRenderer>();
-        //_spriteRenderer.color = Color.white;
+        _spriteRenderer.color = Color.white;
         initXScale = getXScale();
         initYScale = getYScale();
 
@@ -149,6 +151,14 @@ public class PlayerMovement : MonoBehaviour
         _spriteAnimator.SetBool("grounded", IsGrounded());
         _spriteAnimator.SetBool("moving", hinput != 0);
 
+        if (invincibilityTimer > 0 && ((int)(invincibilityTimer)) % 10 == 0)
+        {
+            _spriteRenderer.color = Color.red;
+        } else
+        {
+            _spriteRenderer.color = Color.white;
+        }
+
 
         float _xscale = Mathf.Lerp(getXScale(), initXScale * Mathf.Sign(getXScale()), scaleLerpFactor);
         float _yscale = Mathf.Lerp(getYScale(), initYScale, scaleLerpFactor);
@@ -219,6 +229,13 @@ public class PlayerMovement : MonoBehaviour
     private void takeDamage(int damage)
     {
         Global_Variables.life -= damage;
+        Debug.Log(Global_Variables.life);
+        if (Global_Variables.life <= 0 && !died)
+        {
+            died = true;
+            StateManager _manager = FindObjectOfType<StateManager>();
+            _manager.setStateLoss();
+        }
     }
 
     private int getKeyInt(KeyCode key) {
@@ -243,9 +260,25 @@ public class PlayerMovement : MonoBehaviour
 
         } else if (other.CompareTag("Enemy"))
         {
-            // check if the player has invincibility; if not, take damage and give them invincibility
-            takeDamage(1);
-            giveInvincibility();
+            if (invincibilityTimer <= 0)
+            {
+                // check if the player has invincibility; if not, take damage and give them invincibility
+                takeDamage(1);
+                giveInvincibility();
+            }
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D other)
+    {
+        if (other.CompareTag("Enemy"))
+        {
+            if (invincibilityTimer <= 0)
+            {
+                // check if the player has invincibility; if not, take damage and give them invincibility
+                takeDamage(1);
+                giveInvincibility();
+            }
         }
     }
 

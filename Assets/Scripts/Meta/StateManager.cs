@@ -23,11 +23,14 @@ public class StateManager : MonoBehaviour
         else {
             Instance = this;
         }
+
     }
 
 
     public void Start() {
         DontDestroyOnLoad(gameObject);
+
+        startLevelHelper();
     }
 
     public void startNextLevel() {
@@ -71,8 +74,10 @@ public class StateManager : MonoBehaviour
         // hide any menus - we're playing the level now
         hideGameplayMenus();
         Global_Variables.ammo = 0;
-        HUD.SetActive(!isMenuScene(currentLevel));
-        pauseButton.SetActive(!isMenuScene(currentLevel));
+        Global_Variables.life = Global_Variables.max_life;
+        int levelInd = SceneManager.GetActiveScene().buildIndex;
+        HUD.SetActive(!isMenuScene(levelInd));
+        pauseButton.SetActive(!isMenuScene(levelInd));
     }
 
     public void restartLevel()
