@@ -25,6 +25,9 @@ public class GunAim : MonoBehaviour
     public GameObject bullet;
     public Transform bulletPos;
 
+    public GameObject cooldownObj;
+    public Slider slider;
+
     // Start is called before the first frame update
     void Awake()
     {
@@ -34,6 +37,10 @@ public class GunAim : MonoBehaviour
         OuterHand = transform.Find("OuterHand");
         Gun = transform.Find("Gun").Find("Sprite");
         Player = GameObject.FindGameObjectWithTag("Player");
+
+        cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
+        slider = cooldownObj.GetComponent<Slider>();
+        slider.value = 3;
     }
 
     // Update is called once per frame
@@ -57,6 +64,8 @@ public class GunAim : MonoBehaviour
          
         if (Input.GetMouseButtonDown(0))
         {
+            slider.value = 3;
+
             if (shootType == "Beam")
             {
                 ShootBeam();
@@ -69,6 +78,9 @@ public class GunAim : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
+
+            slider.value = 3;
+
             if (laserGun.activeSelf == true)
             {
                 laserGun.SetActive(false);
