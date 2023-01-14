@@ -24,6 +24,8 @@ public class StateManager : MonoBehaviour
             Instance = this;
         }
 
+        // get the current scene's index for when we're testing and the manager wakes up in a room which isn't the menu
+        currentLevel = SceneManager.GetActiveScene().buildIndex;
     }
 
 
@@ -35,7 +37,7 @@ public class StateManager : MonoBehaviour
 
     public void startNextLevel() {
         currentLevel += 1;
-        if (currentLevel+1 == SceneManager.sceneCountInBuildSettings)
+        if (currentLevel == SceneManager.sceneCountInBuildSettings-1)
         {
             creditsMenu.SetActive(true);
         }
