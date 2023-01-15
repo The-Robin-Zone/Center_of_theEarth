@@ -28895,7 +28895,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Right click to switch between fire mode and suction mode...
+  m_text: 'Right click to fire ground tiles
 
 '
   m_isRightToLeft: 0

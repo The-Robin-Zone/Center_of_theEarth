@@ -26,15 +26,12 @@ public class GunAim : MonoBehaviour
     public Transform bulletPos;
 
     public AudioSource beamSound;
-    public AudioSource shootSound;
+    //public AudioSource shootSound;
     public AudioSource noAmmoSound;
-
 
     // Cooldown
     public GameObject CircleCoolDown;
     public Image CircleCoolDown_Fill_image;
-    //public GameObject cooldownObj;
-    //public Slider slider;
 
     // Start is called before the first frame update
     void Awake()
@@ -47,8 +44,6 @@ public class GunAim : MonoBehaviour
         Player = GameObject.FindGameObjectWithTag("Player");
 
         
-        //cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
-        //slider = cooldownObj.GetComponent<Slider>();
         CircleCoolDown = GameObject.FindGameObjectWithTag("CircleCoolDown");
         CircleCoolDown_Fill_image = GameObject.FindGameObjectWithTag("CircleCoolDown_Fill").GetComponent<Image>();
         CircleCoolDown_Fill_image.fillAmount = 0;
@@ -78,23 +73,12 @@ public class GunAim : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             CircleCoolDown_Fill_image.fillAmount = 0;
-            //slider.value = 3;
-           
-            //if (shootType.Equals("Beam"))
-            //{
-                ShootBeam();
-                
-            //}
-            //if (shootType.Equals("Shoot"))
-            //{
-            //    ShootTiles();
-            //}
+            ShootBeam();   
         }
 
         if (Input.GetMouseButtonDown(1))
         {
             CircleCoolDown_Fill_image.fillAmount = 0;
-            //slider.value = 3;
             beamSound.Stop();
 
             if (laserGun.activeSelf == true)
@@ -102,20 +86,8 @@ public class GunAim : MonoBehaviour
                 laserGun.SetActive(false);
             }
 
-            //IsBeamActive = !IsBeamActive;
-
-            //if (IsBeamActive)
-            //{
-            //    shootType = "Beam";
-            //}
-            //else
-            //{
-            //    shootType = "Shoot";
-            //}
-
             ShootTiles();
         }
-
     }
 
     private void SetHandOrientation (Transform obj, Quaternion quaternion, int yScale) {
@@ -147,7 +119,7 @@ public class GunAim : MonoBehaviour
 
         if (Global_Variables.ammo > 0)
         {
-            shootSound.Play();
+            //shootSound.Play();
 
             Vector2 AimVector = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 

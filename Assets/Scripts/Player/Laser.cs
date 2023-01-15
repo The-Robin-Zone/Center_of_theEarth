@@ -16,24 +16,18 @@ public class Laser : MonoBehaviour
     // Cooldown
     public GameObject CircleCoolDown;
     public Image CircleCoolDown_Fill_image;
-    //public GameObject cooldownObj;
-    //public Slider slider;
 
     private float shotForce = 5.0f;
-    private float suctionTimeMult = 1.75f;
+    private float suctionTimeMult = 2.25f;
     private float minSuctionMouseDistance = 0.8f;
 
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
 
-        //CircleCoolDown.SetActive(true);
-        //cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
-        //slider = cooldownObj.GetComponent<Slider>();
-        //CircleCoolDown = GameObject.FindGameObjectWithTag("CircleCoolDown");
         CircleCoolDown = GameObject.FindGameObjectWithTag("CircleCoolDown");
         CircleCoolDown_Fill_image = GameObject.FindGameObjectWithTag("CircleCoolDown_Fill").GetComponent<Image>();
-        //CircleCoolDown.SetActive(false);
+
     }
     private void FixedUpdate()
     {
@@ -81,20 +75,17 @@ public class Laser : MonoBehaviour
                 hit.transform.gameObject.SetActive(false);
                 Global_Variables.ammo++;
 
-                //slider.value = 3;
                 CircleCoolDown_Fill_image.fillAmount = 0;
                 CircleCoolDown.SetActive(false);
 
             }
             else if (hit.collider != null && hit.transform.gameObject.tag == "Ground")
             {
-                //slider.value = slider.value - (0.1f * suctionTimeMult);
                 CircleCoolDown.SetActive(true);
                 CircleCoolDown_Fill_image.fillAmount = CircleCoolDown_Fill_image.fillAmount + (0.01f * suctionTimeMult);
             }
             else if (hit.collider == null || hit.transform.gameObject.tag != "Ground")
             {
-                //slider.value = 3;
                 CircleCoolDown_Fill_image.fillAmount = 0;
                 CircleCoolDown.SetActive(false);
             }
