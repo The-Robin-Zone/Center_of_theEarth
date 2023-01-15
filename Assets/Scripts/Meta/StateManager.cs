@@ -42,7 +42,7 @@ public class StateManager : MonoBehaviour
 
         startLevelHelper();
 
-        backgroundSound.volume = 0.1f;
+        backgroundSound.volume = 0.8f;
     }
 
     public void Update()

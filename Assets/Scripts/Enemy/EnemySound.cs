@@ -20,6 +20,7 @@ public class EnemySound : MonoBehaviour
     void Awake()
     {
         enemyTakeDamageSound.Play();
+        enemyTakeDamageSound.volume = 0.175f;
     }
 
 }
