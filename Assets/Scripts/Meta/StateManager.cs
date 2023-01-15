@@ -104,7 +104,10 @@ public class StateManager : MonoBehaviour
         HUD.SetActive(!isMenuScene(currentLevel));
         pauseButton.SetActive(!isMenuScene(currentLevel));
 
-        narrationSound[currentLevel - 2].Play();
+        if (currentLevel >= 2 && currentLevel < 5)
+        {
+            narrationSound[currentLevel - 2].Play();
+        }
     }
 
     public void restartLevel()
