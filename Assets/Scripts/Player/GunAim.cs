@@ -29,8 +29,12 @@ public class GunAim : MonoBehaviour
     public AudioSource shootSound;
     public AudioSource noAmmoSound;
 
-    public GameObject cooldownObj;
-    public Slider slider;
+
+    // Cooldown
+    public GameObject CircleCoolDown;
+    public Image CircleCoolDown_Fill_image;
+    //public GameObject cooldownObj;
+    //public Slider slider;
 
     // Start is called before the first frame update
     void Awake()
@@ -42,9 +46,13 @@ public class GunAim : MonoBehaviour
         Gun = transform.Find("Gun").Find("Sprite");
         Player = GameObject.FindGameObjectWithTag("Player");
 
-        cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
-        slider = cooldownObj.GetComponent<Slider>();
-        slider.value = 3;
+        
+        //cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
+        //slider = cooldownObj.GetComponent<Slider>();
+        CircleCoolDown = GameObject.FindGameObjectWithTag("CircleCoolDown");
+        CircleCoolDown_Fill_image = GameObject.FindGameObjectWithTag("CircleCoolDown_Fill").GetComponent<Image>();
+        CircleCoolDown_Fill_image.fillAmount = 0;
+        CircleCoolDown.SetActive(false);
 
     }
 
@@ -69,24 +77,24 @@ public class GunAim : MonoBehaviour
 
         if (Input.GetMouseButtonDown(0))
         {
-            
-            slider.value = 3;
+            CircleCoolDown_Fill_image.fillAmount = 0;
+            //slider.value = 3;
            
-            if (shootType.Equals("Beam"))
-            {
+            //if (shootType.Equals("Beam"))
+            //{
                 ShootBeam();
                 
-            }
-            if (shootType.Equals("Shoot"))
-            {
-                ShootTiles();
-            }
+            //}
+            //if (shootType.Equals("Shoot"))
+            //{
+            //    ShootTiles();
+            //}
         }
 
-        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.E))
+        if (Input.GetMouseButtonDown(1))
         {
-
-            slider.value = 3;
+            CircleCoolDown_Fill_image.fillAmount = 0;
+            //slider.value = 3;
             beamSound.Stop();
 
             if (laserGun.activeSelf == true)
@@ -94,16 +102,18 @@ public class GunAim : MonoBehaviour
                 laserGun.SetActive(false);
             }
 
-            IsBeamActive = !IsBeamActive;
+            //IsBeamActive = !IsBeamActive;
 
-            if (IsBeamActive)
-            {
-                shootType = "Beam";
-            }
-            else
-            {
-                shootType = "Shoot";
-            }
+            //if (IsBeamActive)
+            //{
+            //    shootType = "Beam";
+            //}
+            //else
+            //{
+            //    shootType = "Shoot";
+            //}
+
+            ShootTiles();
         }
 
     }
@@ -120,11 +130,13 @@ public class GunAim : MonoBehaviour
     {
         if (laserGun.activeSelf == false)
         {
+            CircleCoolDown.SetActive(true);
             laserGun.SetActive(true);
             beamSound.Play();
         }
         else
         {
+            CircleCoolDown.SetActive(false);
             laserGun.SetActive(false);
             beamSound.Stop();
         }

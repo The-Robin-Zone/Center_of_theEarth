@@ -12,8 +12,12 @@ public class Laser : MonoBehaviour
     public TextMeshProUGUI ammoAmount;
     public Transform laserFirePoint;
     public LineRenderer m_lineRenderer;
-    public GameObject cooldownObj;
-    public Slider slider;
+
+    // Cooldown
+    public GameObject CircleCoolDown;
+    public Image CircleCoolDown_Fill_image;
+    //public GameObject cooldownObj;
+    //public Slider slider;
 
     private float shotForce = 5.0f;
     private float suctionTimeMult = 1.75f;
@@ -22,9 +26,14 @@ public class Laser : MonoBehaviour
     private void Awake()
     {
         m_transform = GetComponent<Transform>();
-        cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
-        slider = cooldownObj.GetComponent<Slider>();
 
+        //CircleCoolDown.SetActive(true);
+        //cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
+        //slider = cooldownObj.GetComponent<Slider>();
+        //CircleCoolDown = GameObject.FindGameObjectWithTag("CircleCoolDown");
+        CircleCoolDown = GameObject.FindGameObjectWithTag("CircleCoolDown");
+        CircleCoolDown_Fill_image = GameObject.FindGameObjectWithTag("CircleCoolDown_Fill").GetComponent<Image>();
+        //CircleCoolDown.SetActive(false);
     }
     private void FixedUpdate()
     {
@@ -37,7 +46,7 @@ public class Laser : MonoBehaviour
         Vector2 startPos = laserFirePoint.position;
         Vector2 endPos = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        // if mouse is close to player while shooting
+        // if mouse is not close to player while shooting
         if (!((endPos - startPos).magnitude < minSuctionMouseDistance))
         {
 
@@ -66,21 +75,28 @@ public class Laser : MonoBehaviour
 
 
             //If Ray hits a ground tile, disable it
-            if (hit.collider != null && hit.transform.gameObject.tag == "Ground" && slider.value == 0)
+            if (hit.collider != null && hit.transform.gameObject.tag == "Ground" && CircleCoolDown_Fill_image.fillAmount == 1)
             {
                 Debug.DrawRay(transform.position, hit.point, Color.white);
                 hit.transform.gameObject.SetActive(false);
-                slider.value = 3;
                 Global_Variables.ammo++;
+
+                //slider.value = 3;
+                CircleCoolDown_Fill_image.fillAmount = 0;
+                CircleCoolDown.SetActive(false);
 
             }
             else if (hit.collider != null && hit.transform.gameObject.tag == "Ground")
             {
-                slider.value = slider.value - (0.1f * suctionTimeMult);
+                //slider.value = slider.value - (0.1f * suctionTimeMult);
+                CircleCoolDown.SetActive(true);
+                CircleCoolDown_Fill_image.fillAmount = CircleCoolDown_Fill_image.fillAmount + (0.01f * suctionTimeMult);
             }
             else if (hit.collider == null || hit.transform.gameObject.tag != "Ground")
             {
-                slider.value = 3;
+                //slider.value = 3;
+                CircleCoolDown_Fill_image.fillAmount = 0;
+                CircleCoolDown.SetActive(false);
             }
         }
         else
