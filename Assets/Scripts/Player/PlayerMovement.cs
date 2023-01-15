@@ -240,7 +240,7 @@ public class PlayerMovement : MonoBehaviour
     private void takeDamage(int damage)
     {
         takeDamageSound.Play();
-        takeDamageSound.volume = soundvol;
+        takeDamageSound.volume = soundvol + 0.2f;
 
         Global_Variables.life -= damage;
         Debug.Log(Global_Variables.life);

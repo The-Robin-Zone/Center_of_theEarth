@@ -21,6 +21,7 @@ public class StateManager : MonoBehaviour
     public bool startedCurrentLevel = false;
 
     public AudioSource backgroundSound;
+    public AudioSource[] narrationSound;
 
     private void Awake() {
         if (Instance != null && Instance != this) {
@@ -102,6 +103,8 @@ public class StateManager : MonoBehaviour
         Debug.Log("In Helper scene index: " + currentLevel);
         HUD.SetActive(!isMenuScene(currentLevel));
         pauseButton.SetActive(!isMenuScene(currentLevel));
+
+        narrationSound[currentLevel - 2].Play();
     }
 
     public void restartLevel()
