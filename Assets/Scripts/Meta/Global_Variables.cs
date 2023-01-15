@@ -14,6 +14,7 @@ public class Global_Variables : MonoBehaviour
     public TextMeshProUGUI ShootType;
 
     public static float shotTileMultiplier = 1f;
+    public static bool gameFrozen = false;
 
     public void Awake()
     {

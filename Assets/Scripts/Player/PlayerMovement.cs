@@ -72,6 +72,7 @@ public class PlayerMovement : MonoBehaviour
         StateManager _manager = GameObject.Find("GameManager").GetComponent<StateManager>();
         _manager.pauseButton.GetComponent<pausemenu>().scope = GameObject.Find("ScopeCenter"); //getComponent<pausemenu>().scope = GameObject.Find("ScopeCenter");
 
+        Global_Variables.gameFrozen = false;
     }
 
     private void setScale(Vector3 newScale)

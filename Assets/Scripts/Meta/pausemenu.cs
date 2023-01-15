@@ -23,6 +23,15 @@ public class pausemenu : MonoBehaviour
     public void resetTimeScale()
     {
         Time.timeScale = 1;
+
+        Global_Variables.gameFrozen = false;
+    }
+
+    public void gameFreeze()
+    {
+        Time.timeScale = 0;
+
+        Global_Variables.gameFrozen = true;
     }
 
     public void Pause()
@@ -30,7 +39,8 @@ public class pausemenu : MonoBehaviour
         pausebutton.SetActive(false);
         scope.SetActive(false);
         pauseMenu.SetActive(true);
-        Time.timeScale = 0;
+
+        gameFreeze();
     }
 
     //In case youre dead we need this option, Currently not in use

@@ -70,13 +70,13 @@ public class GunAim : MonoBehaviour
             SetHandOrientation(hand, rotQuaternion, yScale);
         }
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !Global_Variables.gameFrozen)
         {
             CircleCoolDown_Fill_image.fillAmount = 0;
             ShootBeam();   
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && !Global_Variables.gameFrozen)
         {
             CircleCoolDown_Fill_image.fillAmount = 0;
             beamSound.Stop();

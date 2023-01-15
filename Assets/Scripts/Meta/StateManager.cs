@@ -18,6 +18,8 @@ public class StateManager : MonoBehaviour
 
     public bool didInitialMenuUpdate = false;
 
+    public bool startedCurrentLevel = false;
+
     public AudioSource backgroundSound;
 
     private void Awake() {
@@ -115,9 +117,15 @@ public class StateManager : MonoBehaviour
         pauseMenu.SetActive(false);
     }
 
+    public void gameFreeze()
+    {
+        Time.timeScale = 0;
+
+        Global_Variables.gameFrozen = true;
+    }
 
     public void finishLevel() {
-        Time.timeScale = 0;
+        gameFreeze();
         winMenu.SetActive(true);
     }
 
@@ -129,6 +137,7 @@ public class StateManager : MonoBehaviour
     public void resetTimeScale()
     {
         Time.timeScale = 1;
+        Global_Variables.gameFrozen = false;
     }
 
     public void returnToMainMenu() {
@@ -139,7 +148,7 @@ public class StateManager : MonoBehaviour
     }
     
     public void setStateLoss() {
-        Time.timeScale = 0;
+        gameFreeze();
         loseMenu.SetActive(true);
     }
 }
