@@ -271,6 +271,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: returnToMainMenu
       objectReference: {fileID: 0}
+    - target: {fileID: 6334705289616055507, guid: b49692dfe290f64449b7c641e07b2b76, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7836278375913958840, guid: b49692dfe290f64449b7c641e07b2b76, type: 3}
       propertyPath: m_RootOrder
       value: 2

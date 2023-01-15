@@ -16,7 +16,7 @@ public class Laser : MonoBehaviour
     public Slider slider;
 
     private float shotForce = 5.0f;
-    private float suctionTimeMult = 1.25f;
+    private float suctionTimeMult = 1.75f;
     private float minSuctionMouseDistance = 0.8f;
 
     private void Awake()

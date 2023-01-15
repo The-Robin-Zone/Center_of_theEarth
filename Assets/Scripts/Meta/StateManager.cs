@@ -18,6 +18,8 @@ public class StateManager : MonoBehaviour
 
     public bool didInitialMenuUpdate = false;
 
+    public AudioSource backgroundSound;
+
     private void Awake() {
         if (Instance != null && Instance != this) {
             // destroy the object which was using this script - the new GameManager using this attempt at a new instance of StateManager
@@ -29,6 +31,9 @@ public class StateManager : MonoBehaviour
 
         // get the current scene's index for when we're testing and the manager wakes up in a room which isn't the menu
         currentLevel = SceneManager.GetActiveScene().buildIndex;
+
+        backgroundSound = GetComponent<AudioSource>();
+        
     }
 
 
@@ -36,6 +41,8 @@ public class StateManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         startLevelHelper();
+
+        backgroundSound.volume = 0.1f;
     }
 
     public void Update()

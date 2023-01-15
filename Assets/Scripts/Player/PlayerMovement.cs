@@ -53,6 +53,10 @@ public class PlayerMovement : MonoBehaviour
     private float landScaleX = 1.2f;
     private float landScaleY = 0.7f;
 
+    // Sound
+    public AudioSource jumpSound;
+    public AudioSource takeDamageSound;
+
     private void Awake()
     {
         //_rb = GetComponent<Rigidbody2D>();        
@@ -66,6 +70,7 @@ public class PlayerMovement : MonoBehaviour
 
         StateManager _manager = GameObject.Find("GameManager").GetComponent<StateManager>();
         _manager.pauseButton.GetComponent<pausemenu>().scope = GameObject.Find("ScopeCenter"); //getComponent<pausemenu>().scope = GameObject.Find("ScopeCenter");
+
     }
 
     private void setScale(Vector3 newScale)
@@ -207,6 +212,8 @@ public class PlayerMovement : MonoBehaviour
         float _xscale = jumpScaleX * initXScale * Mathf.Sign(getXScale());
         float _yscale = jumpScaleY * getYScale();
         setScale(new Vector3(_xscale, _yscale, getZScale()));
+
+        jumpSound.Play();
     }
 
     // private bool IsGrounded()
@@ -229,6 +236,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void takeDamage(int damage)
     {
+        takeDamageSound.Play();
+
         Global_Variables.life -= damage;
         Debug.Log(Global_Variables.life);
         if (Global_Variables.life <= 0 && !died)

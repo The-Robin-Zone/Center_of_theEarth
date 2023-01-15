@@ -25,6 +25,10 @@ public class GunAim : MonoBehaviour
     public GameObject bullet;
     public Transform bulletPos;
 
+    public AudioSource beamSound;
+    public AudioSource shootSound;
+    public AudioSource noAmmoSound;
+
     public GameObject cooldownObj;
     public Slider slider;
 
@@ -41,6 +45,7 @@ public class GunAim : MonoBehaviour
         cooldownObj = GameObject.FindGameObjectWithTag("Cooldown");
         slider = cooldownObj.GetComponent<Slider>();
         slider.value = 3;
+
     }
 
     // Update is called once per frame
@@ -70,6 +75,7 @@ public class GunAim : MonoBehaviour
             if (shootType.Equals("Beam"))
             {
                 ShootBeam();
+                
             }
             if (shootType.Equals("Shoot"))
             {
@@ -81,6 +87,7 @@ public class GunAim : MonoBehaviour
         {
 
             slider.value = 3;
+            beamSound.Stop();
 
             if (laserGun.activeSelf == true)
             {
@@ -114,10 +121,12 @@ public class GunAim : MonoBehaviour
         if (laserGun.activeSelf == false)
         {
             laserGun.SetActive(true);
+            beamSound.Play();
         }
         else
         {
             laserGun.SetActive(false);
+            beamSound.Stop();
         }
     }
 
@@ -126,6 +135,8 @@ public class GunAim : MonoBehaviour
 
         if (Global_Variables.ammo > 0)
         {
+            shootSound.Play();
+
             Vector2 AimVector = (Vector2)Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
             Vector2 shotForce = AimVector - (Vector2)laserGun.transform.position;
@@ -160,6 +171,10 @@ public class GunAim : MonoBehaviour
                 Global_Variables.ammo--;
             }
 
+        }
+        else
+        {
+            noAmmoSound.Play();
         }
     }
 
