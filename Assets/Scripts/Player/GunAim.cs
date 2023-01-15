@@ -77,7 +77,7 @@ public class GunAim : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) || Input.GetKeyDown(KeyCode.RightShift) || Input.GetKeyDown(KeyCode.E))
         {
 
             slider.value = 3;
