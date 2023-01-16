@@ -24,7 +24,7 @@ public class GunAim : MonoBehaviour
     public Transform target;
     public GameObject bullet;
     public Transform bulletPos;
-    private float minSuctionMouseDistance = 1.2f;
+    private float minShootingMouseDistance = 1.6f;
 
     public AudioSource beamSound;
     //public AudioSource shootSound;
@@ -129,7 +129,7 @@ public class GunAim : MonoBehaviour
             GameObject CurrBullet;
 
             // if mouse is not close to player while shooting
-            if (!((AimVector - (Vector2)Player.transform.position).magnitude < minSuctionMouseDistance))
+            if (!((AimVector - (Vector2)Player.transform.position).magnitude < minShootingMouseDistance))
             {
 
                 //if aim is directly down and jump
