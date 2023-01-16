@@ -56,6 +56,13 @@ public class StateManager : MonoBehaviour
             didInitialMenuUpdate = true;
             //restartLevel();
         }
+        if (SceneManager.GetActiveScene().buildIndex == 0)
+        {
+            // reset voice lines so they can play again
+            narrationsPlayed[0] = false;
+            narrationsPlayed[1] = false;
+            narrationsPlayed[2] = false;
+        }
     }
 
     public void startNextLevel() {
@@ -157,10 +164,6 @@ public class StateManager : MonoBehaviour
         hideGameplayMenus();
         creditsMenu.SetActive(false);
 
-        // reset voice lines so they can play again
-        narrationsPlayed[0] = false;
-        narrationsPlayed[1] = false;
-        narrationsPlayed[2] = false;
 
         SceneManager.LoadScene(0);
     }
