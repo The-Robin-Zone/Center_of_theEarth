@@ -151,7 +151,7 @@ public class GunAim : MonoBehaviour
                 //if aim is not down
                 else
                 {
-                    CurrBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+                    CurrBullet = Instantiate(bullet, transform.position + (Vector3)shotForce.normalized, Quaternion.identity);
                     CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
                     //Vector3 _scale = CurrBullet.transform.localScale;
                     //float _mult = Global_Variables.shotTileMultiplier;
