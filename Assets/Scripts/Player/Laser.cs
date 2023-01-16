@@ -18,7 +18,7 @@ public class Laser : MonoBehaviour
     public Image CircleCoolDown_Fill_image;
 
     private float shotForce = 5.0f;
-    private float suctionTimeMult = 2.25f;
+    private float suctionTimeMult = 3f;
     private float minSuctionMouseDistance = 0.8f;
 
     private void Awake()
