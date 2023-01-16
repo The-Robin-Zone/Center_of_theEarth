@@ -2943,7 +2943,7 @@ GameObject:
   m_Component:
   - component: {fileID: 265122865}
   - component: {fileID: 265122867}
-  - component: {fileID: 265122866}
+  - component: {fileID: 265122868}
   m_Layer: 0
   m_Name: Sikes (9)
   m_TagString: Enemy
@@ -2966,32 +2966,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &265122866
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 265122864}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.9, y: 6.43}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &265122867
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -3044,6 +3018,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &265122868
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 265122864}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.9, y: 6.43}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.9, y: 6.43}
+  m_EdgeRadius: 0
 --- !u!1 &307953412
 GameObject:
   m_ObjectHideFlags: 0
@@ -4051,7 +4051,7 @@ GameObject:
   m_Component:
   - component: {fileID: 369773130}
   - component: {fileID: 369773132}
-  - component: {fileID: 369773131}
+  - component: {fileID: 369773133}
   m_Layer: 0
   m_Name: Sikes (8)
   m_TagString: Enemy
@@ -4074,32 +4074,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &369773131
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 369773129}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.9, y: 6.43}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &369773132
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4152,6 +4126,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &369773133
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 369773129}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.9, y: 6.43}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.9, y: 6.43}
+  m_EdgeRadius: 0
 --- !u!1 &374213623
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,7 +5383,7 @@ GameObject:
   m_Component:
   - component: {fileID: 484355036}
   - component: {fileID: 484355038}
-  - component: {fileID: 484355037}
+  - component: {fileID: 484355039}
   m_Layer: 0
   m_Name: Sikes (11)
   m_TagString: Enemy
@@ -5406,32 +5406,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &484355037
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 484355035}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.9, y: 6.43}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &484355038
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -5484,6 +5458,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &484355039
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 484355035}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.9, y: 6.43}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.9, y: 6.43}
+  m_EdgeRadius: 0
 --- !u!1 &485281601
 GameObject:
   m_ObjectHideFlags: 0
@@ -6049,7 +6049,7 @@ GameObject:
   m_Component:
   - component: {fileID: 518106173}
   - component: {fileID: 518106175}
-  - component: {fileID: 518106174}
+  - component: {fileID: 518106176}
   m_Layer: 0
   m_Name: Sikes (16)
   m_TagString: Enemy
@@ -6072,32 +6072,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &518106174
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 518106172}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.9, y: 6.43}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &518106175
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -6150,6 +6124,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &518106176
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 518106172}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.9, y: 6.43}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.9, y: 6.43}
+  m_EdgeRadius: 0
 --- !u!1 &518369716
 GameObject:
   m_ObjectHideFlags: 0
@@ -10996,7 +10996,7 @@ GameObject:
   m_Component:
   - component: {fileID: 893339504}
   - component: {fileID: 893339506}
-  - component: {fileID: 893339505}
+  - component: {fileID: 893339507}
   m_Layer: 0
   m_Name: Sikes (5)
   m_TagString: Enemy
@@ -11019,32 +11019,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -17.654}
---- !u!61 &893339505
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 893339503}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12, y: 9.07}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &893339506
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11097,6 +11071,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &893339507
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 893339503}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12, y: 9.07}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12, y: 9.07}
+  m_EdgeRadius: 0
 --- !u!1 &898920619
 GameObject:
   m_ObjectHideFlags: 0
@@ -11218,7 +11218,7 @@ GameObject:
   m_Component:
   - component: {fileID: 915794274}
   - component: {fileID: 915794276}
-  - component: {fileID: 915794275}
+  - component: {fileID: 915794277}
   m_Layer: 0
   m_Name: Sikes (15)
   m_TagString: Enemy
@@ -11241,32 +11241,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &915794275
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 915794273}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.9, y: 6.43}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &915794276
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -11319,6 +11293,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &915794277
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 915794273}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.9, y: 6.43}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.9, y: 6.43}
+  m_EdgeRadius: 0
 --- !u!1 &922396609
 GameObject:
   m_ObjectHideFlags: 0
@@ -12224,7 +12224,7 @@ GameObject:
   m_Component:
   - component: {fileID: 955022600}
   - component: {fileID: 955022602}
-  - component: {fileID: 955022601}
+  - component: {fileID: 955022603}
   m_Layer: 0
   m_Name: Sikes (17)
   m_TagString: Enemy
@@ -12247,32 +12247,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &955022601
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 955022599}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.9, y: 6.43}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &955022602
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -12325,6 +12299,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &955022603
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 955022599}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.9, y: 6.43}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.9, y: 6.43}
+  m_EdgeRadius: 0
 --- !u!1 &966721452
 GameObject:
   m_ObjectHideFlags: 0
@@ -14433,7 +14433,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1199698538}
   - component: {fileID: 1199698540}
-  - component: {fileID: 1199698539}
+  - component: {fileID: 1199698541}
   m_Layer: 0
   m_Name: Sikes (14)
   m_TagString: Enemy
@@ -14456,32 +14456,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1199698539
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1199698537}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.9, y: 6.43}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &1199698540
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -14534,6 +14508,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1199698541
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1199698537}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.9, y: 6.43}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.9, y: 6.43}
+  m_EdgeRadius: 0
 --- !u!1 &1199950635
 GameObject:
   m_ObjectHideFlags: 0
@@ -15795,7 +15795,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1266186781}
   - component: {fileID: 1266186783}
-  - component: {fileID: 1266186782}
+  - component: {fileID: 1266186784}
   m_Layer: 0
   m_Name: Sikes (21)
   m_TagString: Enemy
@@ -15818,32 +15818,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 12.934}
---- !u!61 &1266186782
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1266186780}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.9, y: 6.43}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &1266186783
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -15896,6 +15870,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1266186784
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1266186780}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -3.1277146, y: -0.06542826}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.9, y: 6.43}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.644572, y: 6.2991433}
+  m_EdgeRadius: 0
 --- !u!1 &1292609948
 GameObject:
   m_ObjectHideFlags: 0
@@ -20439,7 +20439,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1590747228}
   - component: {fileID: 1590747230}
-  - component: {fileID: 1590747229}
+  - component: {fileID: 1590747231}
   m_Layer: 0
   m_Name: Sikes (7)
   m_TagString: Enemy
@@ -20462,32 +20462,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1590747229
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1590747227}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.9, y: 6.43}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &1590747230
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -20540,6 +20514,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1590747231
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1590747227}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.9, y: 6.43}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.9, y: 6.43}
+  m_EdgeRadius: 0
 --- !u!4 &1603258189 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1450729995801772237, guid: f9803825f4326a14b95e20046afee162, type: 3}
@@ -23532,7 +23532,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1833732936}
   - component: {fileID: 1833732938}
-  - component: {fileID: 1833732937}
+  - component: {fileID: 1833732939}
   m_Layer: 0
   m_Name: Sikes (20)
   m_TagString: Enemy
@@ -23555,32 +23555,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!61 &1833732937
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1833732935}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 17.9, y: 6.43}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &1833732938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -23633,6 +23607,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &1833732939
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1833732935}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 17.9, y: 6.43}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 17.9, y: 6.43}
+  m_EdgeRadius: 0
 --- !u!4 &1839508183 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4701590370481601740, guid: 94b480ce1b6e6fe4f9175e6193b7c910, type: 3}
@@ -30545,7 +30545,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2023001291}
   - component: {fileID: 2023001293}
-  - component: {fileID: 2023001292}
+  - component: {fileID: 2023001294}
   m_Layer: 0
   m_Name: Sikes (6)
   m_TagString: Enemy
@@ -30568,32 +30568,6 @@ Transform:
   m_Father: {fileID: 711389880}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 6.205}
---- !u!61 &2023001292
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2023001290}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 12, y: 9.07}
-    newSize: {x: 1.8007812, y: 1.6679688}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1.8007812, y: 1.6679688}
-  m_EdgeRadius: 0
 --- !u!212 &2023001293
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -30646,6 +30620,32 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!61 &2023001294
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2023001290}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12, y: 9.07}
+    newSize: {x: 1.8007812, y: 1.6679688}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 12, y: 9.07}
+  m_EdgeRadius: 0
 --- !u!1 &2023677742
 GameObject:
   m_ObjectHideFlags: 0
