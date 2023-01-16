@@ -361,10 +361,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textures:
-  - {fileID: 2800000, guid: 5c6b86ff650b34b5eb355b4ba1b3761e, type: 3}
-  - {fileID: 2800000, guid: 917ed93e48f11428c88cd4e825f448e6, type: 3}
-  - {fileID: 2800000, guid: 5c2bdbc8e91134f3085c27c6775c7988, type: 3}
-  - {fileID: 2800000, guid: cdffee6a23ae24ec09cb4850405fa16d, type: 3}
+  - {fileID: 2800000, guid: 04fc59a994d1f4abd892c9b57a71855b, type: 3}
+  - {fileID: 2800000, guid: 5f72547367b3e4923970f150a15434f4, type: 3}
+  - {fileID: 2800000, guid: 1153e2d1f1830418c99361710489ed22, type: 3}
+  - {fileID: 2800000, guid: e40f505d4f4d348e4a5a307920562c83, type: 3}
   fps: 30
 --- !u!1 &121729316326320990
 GameObject:
@@ -501,7 +501,6 @@ MonoBehaviour:
   bullet: {fileID: 2578707382079463963, guid: 589cc7bf74848480995559e1ac250100, type: 3}
   bulletPos: {fileID: 0}
   beamSound: {fileID: 7965486721602668931}
-  shootSound: {fileID: 2600491299255516994}
   noAmmoSound: {fileID: 216033783938809343}
   CircleCoolDown: {fileID: 0}
   CircleCoolDown_Fill_image: {fileID: 0}
@@ -1026,6 +1025,7 @@ MonoBehaviour:
   boxSize: {x: 0.4, y: 0.41, z: 0}
   jumpSound: {fileID: 8857001746216421753}
   takeDamageSound: {fileID: 5136140018352363932}
+  soundvol: 0.05
 --- !u!70 &8434901652508678139
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
