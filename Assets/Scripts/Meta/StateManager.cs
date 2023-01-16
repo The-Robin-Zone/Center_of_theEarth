@@ -67,10 +67,6 @@ public class StateManager : MonoBehaviour
 
     public void startNextLevel() {
         currentLevel += 1;
-        if (currentLevel == SceneManager.sceneCountInBuildSettings-1)
-        {
-            creditsMenu.SetActive(true);
-        }
         startLevel(currentLevel);
     }
 
@@ -111,6 +107,11 @@ public class StateManager : MonoBehaviour
         Debug.Log("In Helper scene index: " + currentLevel);
         HUD.SetActive(!isMenuScene(currentLevel));
         pauseButton.SetActive(!isMenuScene(currentLevel));
+
+        if (currentLevel == SceneManager.sceneCountInBuildSettings - 1)
+        {
+            creditsMenu.SetActive(true);
+        }
 
         if (currentLevel >= 2 && currentLevel < 5)
         {

@@ -279,6 +279,18 @@ PrefabInstance:
       propertyPath: Loop
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6343894061754772082, guid: b49692dfe290f64449b7c641e07b2b76, type: 3}
+      propertyPath: m_Color.b
+      value: 0.2830189
+      objectReference: {fileID: 0}
+    - target: {fileID: 6343894061754772082, guid: b49692dfe290f64449b7c641e07b2b76, type: 3}
+      propertyPath: m_Color.g
+      value: 0.18707724
+      objectReference: {fileID: 0}
+    - target: {fileID: 6343894061754772082, guid: b49692dfe290f64449b7c641e07b2b76, type: 3}
+      propertyPath: m_Color.r
+      value: 0.11854752
+      objectReference: {fileID: 0}
     - target: {fileID: 7836278375913958840, guid: b49692dfe290f64449b7c641e07b2b76, type: 3}
       propertyPath: m_RootOrder
       value: 2
