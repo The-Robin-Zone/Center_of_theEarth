@@ -24,6 +24,7 @@ public class GunAim : MonoBehaviour
     public Transform target;
     public GameObject bullet;
     public Transform bulletPos;
+    private float minSuctionMouseDistance = 1.2f;
 
     public AudioSource beamSound;
     //public AudioSource shootSound;
@@ -127,32 +128,40 @@ public class GunAim : MonoBehaviour
 
             GameObject CurrBullet;
 
-
-            //if aim is directly down and jump
-            if ((AimVector.y < transform.position.y) && (Math.Abs(AimVector.x - transform.position.x) < 2) && IsPlayerInAir())
+            // if mouse is not close to player while shooting
+            if (!((AimVector - (Vector2)Player.transform.position).magnitude < minSuctionMouseDistance))
             {
-                CurrBullet = Instantiate(bullet, transform.position - new Vector3(0,1,0), Quaternion.identity);
-                CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
-                //Vector3 _scale = CurrBullet.transform.localScale;
-                //float _mult = Global_Variables.shotTileMultiplier;
-                //CurrBullet.transform.localScale = new Vector3(_scale.x * _mult, _scale.y * _mult, _scale.z);
-                Global_Variables.ammo--;
-            }
-            //if aim is directly down and didnt jump
-            else if ((AimVector.y < transform.position.y) && (Math.Abs(AimVector.x - transform.position.x) < 2))
-            {
-                Debug.Log("player aimed down and shot, but not in the air so dont do anything!");
 
+                //if aim is directly down and jump
+                if ((AimVector.y < transform.position.y) && (Math.Abs(AimVector.x - transform.position.x) < 2) && IsPlayerInAir())
+                {
+                    CurrBullet = Instantiate(bullet, transform.position - new Vector3(0, 1, 0), Quaternion.identity);
+                    CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
+                    //Vector3 _scale = CurrBullet.transform.localScale;
+                    //float _mult = Global_Variables.shotTileMultiplier;
+                    //CurrBullet.transform.localScale = new Vector3(_scale.x * _mult, _scale.y * _mult, _scale.z);
+                    Global_Variables.ammo--;
+                }
+                //if aim is directly down and didnt jump
+                else if ((AimVector.y < transform.position.y) && (Math.Abs(AimVector.x - transform.position.x) < 2))
+                {
+                    Debug.Log("player aimed down and shot, but not in the air so dont do anything!");
+
+                }
+                //if aim is not down
+                else
+                {
+                    CurrBullet = Instantiate(bullet, transform.position, Quaternion.identity);
+                    CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
+                    //Vector3 _scale = CurrBullet.transform.localScale;
+                    //float _mult = Global_Variables.shotTileMultiplier;
+                    //CurrBullet.transform.localScale = new Vector3(_scale.x * _mult, _scale.y * _mult, _scale.z);
+                    Global_Variables.ammo--;
+                }
             }
-            //if aim is not down
             else
             {
-                CurrBullet = Instantiate(bullet, transform.position, Quaternion.identity);
-                CurrBullet.GetComponent<Rigidbody2D>().AddForce(shotForce.normalized * 300);
-                //Vector3 _scale = CurrBullet.transform.localScale;
-                //float _mult = Global_Variables.shotTileMultiplier;
-                //CurrBullet.transform.localScale = new Vector3(_scale.x * _mult, _scale.y * _mult, _scale.z);
-                Global_Variables.ammo--;
+                Debug.Log("You are aiming to close to the player");
             }
 
         }
