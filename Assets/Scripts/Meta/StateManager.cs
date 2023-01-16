@@ -22,6 +22,7 @@ public class StateManager : MonoBehaviour
 
     public AudioSource backgroundSound;
     public AudioSource[] narrationSound;
+    public bool[] narrationsPlayed = { false, false, false };
 
     private void Awake() {
         if (Instance != null && Instance != this) {
@@ -106,7 +107,12 @@ public class StateManager : MonoBehaviour
 
         if (currentLevel >= 2 && currentLevel < 5)
         {
-            narrationSound[currentLevel - 2].Play();
+            int soundIndex = currentLevel - 2;
+            if (!narrationsPlayed[soundIndex])
+            {
+                narrationSound[soundIndex].Play();
+                narrationsPlayed[soundIndex] = true;
+            }
         }
     }
 
@@ -137,7 +143,7 @@ public class StateManager : MonoBehaviour
 
     public void exitGame() {
         Application.Quit();
-        UnityEditor.EditorApplication.isPlaying = false;
+        //UnityEditor.EditorApplication.isPlaying = false;
     }
 
     public void resetTimeScale()
@@ -150,6 +156,12 @@ public class StateManager : MonoBehaviour
         resetTimeScale();
         hideGameplayMenus();
         creditsMenu.SetActive(false);
+
+        // reset voice lines so they can play again
+        narrationsPlayed[0] = false;
+        narrationsPlayed[1] = false;
+        narrationsPlayed[2] = false;
+
         SceneManager.LoadScene(0);
     }
     
